@@ -6,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
 function App() {
   const action = useNavigationType();
@@ -45,7 +46,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Footer />} />
+      <Route path="/" element={<NavBar />} />
+      {/* <Route path="/" element={<Footer />} /> */}
     </Routes>
   );
 }
