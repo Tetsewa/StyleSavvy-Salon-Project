@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import HomePage from "./pages/Home"; 
 
 function App() {
   const action = useNavigationType();
@@ -48,6 +49,7 @@ function App() {
     <Routes>
       <Route path="/" element={<NavBar />} />
        <Route path="/" element={<Footer />} />
+       <Route path="/" element={<HomePage />} />
     </Routes>
   );
 }
