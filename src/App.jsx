@@ -7,6 +7,10 @@ import {
 } from "react-router-dom";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import MakeAnAppointment from "./pages/MakeAnAppointment"
+
 
 function App() {
   const action = useNavigationType();
@@ -45,10 +49,17 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      <Route path="/" element={<NavBar />} />
-      {/* <Route path="/" element={<Footer />} /> */}
-    </Routes>
+    <div>
+      <NavBar />
+      <Routes>
+        {/* <Route path="/" element={<NavBar />} /> */}
+        {/* <Route path="/Footer" element={<Footer />} />  */}
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 export default App;
