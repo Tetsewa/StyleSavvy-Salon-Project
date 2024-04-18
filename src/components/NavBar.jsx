@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
   return (
     <div className="w-full flex justify-center relative bg-white overflow-hidden text-left text-mini text-white font-inter">

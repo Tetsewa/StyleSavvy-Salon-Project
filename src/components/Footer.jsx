@@ -1,4 +1,4 @@
-const Footer = () => {
+/*const Footer = () => {
   return (
     <div className="w-full relative bg-white h-[528px] overflow-hidden text-left text-xl text-black font-fira-sans">
       <div className="flex top-[0px] left-[0px] bg-gainsboro w-[1110px] h-[528px]" />
@@ -109,4 +109,38 @@ const Footer = () => {
   );
 };
 
+export default Footer;*/
+import React from "react";
+const Footer = () => {
+  return (
+<div className="footer">
+          <div className="footMenu">
+            Opening Hours
+            <div className="footInfo">
+              Monday 9am to 5pm <br />
+              Tuesday 9am to 5pm
+              <br />
+              Wednesday 9am to 5pm <br />
+              Thursday 9am to 5pm
+              <br />
+              Friday 9am to 5pm
+            </div>
+          </div>
+          <div className="footMenu">
+            location
+            <div className="footInfo">
+              2145 yG, Amsterdam
+              <br /> Netherlands
+            </div>
+          </div>
+          <div className="footMenu">
+            CONTACT
+            <div className="footInfo">
+              tel: +3168744663 <br />
+              email: info@stylesavvysalon.com
+            </div>
+          </div>
+</div>
+  );
+}
 export default Footer;
