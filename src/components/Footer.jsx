@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
     <div className="w-full relative bg-white h-[528px] overflow-hidden text-left text-xl text-black font-fira-sans">
-      <div className="absolute top-[0px] left-[0px] bg-gainsboro w-[1110px] h-[528px]" />
-      <div className="absolute top-[104px] left-[747px] w-[314px] h-80">
-        <div className="absolute top-[0px] left-[14px] tracking-[0.02em] inline-block w-[300px] h-80">
+      <div className="flex top-[0px] left-[0px] bg-gainsboro w-[1110px] h-[528px]" />
+      <div className="flex top-[104px] left-[747px] w-[314px] h-80">
+        <div className="flex top-[0px] left-[14px] tracking-[0.02em] inline-block w-[300px] h-80">
           <p className="m-0">
             <span className="text-mini font-fira-sans whitespace-pre-wrap">{`     `}</span>
             <b>Salon Opening Hours</b>
@@ -39,12 +39,12 @@ const Footer = () => {
           </p>
         </div>
         <img
-          className="absolute top-[0px] left-[0px] w-[27px] h-[27px] object-cover"
+          className="flex top-[0px] left-[0px] w-[27px] h-[27px] object-cover"
           alt=""
           src="/image-1@2x.png"
         />
       </div>
-      <div className="absolute top-[104px] left-[418px] tracking-[0.02em] inline-block w-[154px] h-[119px] text-mini">
+      <div className="flex top-[104px] left-[418px] tracking-[0.02em] inline-block w-[154px] h-[119px] text-mini">
         <p className="m-0 whitespace-pre-wrap text-xl">
           <b>Contact Us</b>
         </p>
@@ -55,17 +55,17 @@ const Footer = () => {
         <p className="m-0 whitespace-pre-wrap"> info@stylesavvy.nl</p>
       </div>
       <img
-        className="absolute top-[159px] left-[405px] w-[27px] h-[27px] object-cover"
+        className="flex top-[159px] left-[405px] w-[27px] h-[27px] object-cover"
         alt=""
         src="/image-2@2x.png"
       />
       <img
-        className="absolute top-[204px] left-[405px] w-[27px] h-[19.4px] object-cover"
+        className="flex top-[204px] left-[405px] w-[27px] h-[19.4px] object-cover"
         alt=""
         src="/image-3@2x.png"
       />
-      <div className="absolute top-[104px] left-[80px] w-[168px] h-[119px] text-mini">
-        <div className="absolute top-[0px] left-[14px] tracking-[0.02em] inline-block w-[154px] h-[119px]">
+      <div className="flex top-[104px] left-[80px] w-[168px] h-[119px] text-mini">
+        <div className="flex top-[0px] left-[14px] tracking-[0.02em] inline-block w-[154px] h-[119px]">
           <p className="m-0 text-xl">
             <span className="font-fira-sans">
               <span className="text-mini whitespace-pre-wrap">{`     `}</span>
@@ -82,26 +82,26 @@ const Footer = () => {
           <p className="m-0">Amsterdam</p>
         </div>
         <img
-          className="absolute top-[0px] left-[0px] w-[27px] h-[27px] object-cover"
+          className="flex top-[0px] left-[0px] w-[27px] h-[27px] object-cover"
           alt=""
           src="/image-1@2x.png"
         />
       </div>
-      <div className="absolute top-[264px] left-[405px] w-10 h-10 text-center text-white font-fontawesome">
-        <div className="absolute top-[0px] left-[0px] rounded bg-darkslategray w-10 h-10" />
-        <div className="absolute top-[3px] left-[18px] tracking-[0.01em] leading-[32px] lowercase inline-block w-[8.9px] h-[23.7px]">
+      <div className="flex top-[264px] left-[405px] w-10 h-10 text-center text-white font-fontawesome">
+        <div className="flex top-[0px] left-[0px] rounded bg-darkslategray w-10 h-10" />
+        <div className="flex top-[3px] left-[18px] tracking-[0.01em] leading-[32px] lowercase inline-block w-[8.9px] h-[23.7px]">
           
         </div>
       </div>
-      <div className="absolute top-[264px] left-[486px] w-10 h-10 text-center text-[22px] text-white font-fontawesome">
-        <div className="absolute top-[0px] left-[0px] rounded bg-darkslategray w-10 h-10" />
-        <div className="absolute top-[3px] left-[10px] tracking-[0.01em] leading-[32px] lowercase inline-block w-[20.7px] h-[23.7px]">
+      <div className="flex top-[264px] left-[486px] w-10 h-10 text-center text-[22px] text-white font-fontawesome">
+        <div className="flex top-[0px] left-[0px] rounded bg-darkslategray w-10 h-10" />
+        <div className="flex top-[3px] left-[10px] tracking-[0.01em] leading-[32px] lowercase inline-block w-[20.7px] h-[23.7px]">
           
         </div>
       </div>
-      <div className="absolute top-[264px] left-[567px] w-10 h-10 text-center text-white font-fontawesome">
-        <div className="absolute top-[0px] left-[0px] rounded bg-darkslategray w-10 h-10" />
-        <div className="absolute top-[3px] left-[13px] tracking-[0.01em] leading-[32px] lowercase inline-block w-[14.8px] h-[23.7px]">
+      <div className="flex top-[264px] left-[567px] w-10 h-10 text-center text-white font-fontawesome">
+        <div className="flex top-[0px] left-[0px] rounded bg-darkslategray w-10 h-10" />
+        <div className="flex top-[3px] left-[13px] tracking-[0.01em] leading-[32px] lowercase inline-block w-[14.8px] h-[23.7px]">
           
         </div>
       </div>
