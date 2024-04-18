@@ -9,7 +9,7 @@ import React from 'react';
 }
 
 export default Home;*/
-const HomePage = () => {
+const Home = () => {
     return (
       <div className="w-full relative bg-white h-[1586px] overflow-hidden text-left text-mini text-black font-fira-sans">
         <img
@@ -116,4 +116,4 @@ const HomePage = () => {
     );
   };
   
-  export default HomePage;
+  export default Home;
