@@ -22,8 +22,10 @@ const Navbar = () => {
           <a className="text-black">Team</a> */}
         </div>
 
-        <div className="flex items-center  font-semibold">
-          <button className=" bg-black text-white p-4 rounded">My Reservation</button>
+        <div className="flex items-center  top-0 right-30 font-semibold">
+          <button className="flex bg-black text-white p-4 rounded">My Reservation</button>
+          {/* <button class="text-left">Left-aligned Button</button> */}
+
         </div>
 
 

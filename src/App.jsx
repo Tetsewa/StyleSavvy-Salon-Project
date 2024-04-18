@@ -47,7 +47,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<NavBar />} />
-      {/* <Route path="/" element={<Footer />} /> */}
+       <Route path="/" element={<Footer />} />
     </Routes>
   );
 }
