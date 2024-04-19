@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home"; 
 import MakeAnAppointment from "./pages/MakeAnAppointment";
 import AboutUs from "./pages/AboutUs";
+import Team from "./pages/Team";
 
 function App() {
   const action = useNavigationType();
@@ -58,6 +59,7 @@ function App() {
        <Route path="/" element={<Home/>} />
        <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
        <Route path="/AboutUs" element={<AboutUs />} />
+       <Route path="/Team" element={<Team />} />
     </Routes>
     <Footer/>
     </div>
