@@ -8,13 +8,29 @@ import React from 'react';
 export default Home;*/
 const Home = () => {
     return (
-        <div className="w-full relative bg-white h-[1586px] overflow-hidden text-left text-mini text-black font-fira-sans">
-            <img
-                className="absolute top-[0px] left-[0px] w-[1110px] h-[488px] object-cover"
-                alt=""
-                src="/backgroundImage.png"
-            />
-            <div className="absolute top-[585px] left-[142px] text-[64px] tracking-[0.02em] capitalize font-alex-brush text-transparent !bg-clip-text [background:linear-gradient(#AD5133,_#AD5133),_#000] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] inline-block w-[796px] h-[58px]">
+        <div className="w-full relative bg-white  overflow-hidden text-left text-mini text-black font-fira-sans">
+            {/* making the image */}
+
+            <div className='relative border-solid border-amber-700 border-8'>
+                <img
+                    className="w-full"
+                    alt=""
+                    src="/backgroundImage.png"
+                />
+
+                <img
+                    className="absolute top-[30%] left-[30%]"
+                    alt=""
+                    width={300}
+                    height={300}
+
+                    src="/styleSavvywriting.png"
+                />
+            </div>
+
+
+
+            {/* <div className="absolute top-[585px] left-[142px] text-[64px] tracking-[0.02em] capitalize font-alex-brush text-transparent !bg-clip-text [background:linear-gradient(#AD5133,_#AD5133),_#000] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] inline-block w-[796px] h-[58px]">
                 What Customers Say About Us
             </div>
             <div className="absolute top-[680px] left-[399px] w-[295px] h-[409px]">
@@ -25,6 +41,12 @@ const Home = () => {
                     src="/ellipse-9@2x.png"
                 />
                 <div className="absolute top-[194px] left-[49px] tracking-[0.02em] inline-block w-[218px] h-[186px]">
+                    <img
+                        src="testimonial1.webp"
+                        className='rounded-full'
+                        width={400}
+                        height={400}
+                    />
                     My stylist, Sarah, was an absolute gem! She took the time to listen to
                     my hair concerns and understand the look I wanted to achieve. She
                     asked insightful questions about my hair texture, styling routine, and
@@ -108,7 +130,7 @@ const Home = () => {
                 className="absolute top-[277px] left-[275px] w-[470px] h-[136px] object-cover"
                 alt=""
                 src="/stylesavvy-writingphotoroom-1@2x.png"
-            />
+            /> */}
         </div>
     );
 };
