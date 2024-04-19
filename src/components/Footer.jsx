@@ -1,6 +1,6 @@
-/*const Footer = () => {
+const Footer = () => {
   return (
-    <div className="w-full relative bg-white h-[528px] overflow-hidden text-left text-xl text-black font-fira-sans">
+    <div className="w-full flex relative bg-white h-[528px] overflow-hidden text-centertext-xl text-black font-fira-sans">
       <div className="flex top-[0px] left-[0px] bg-gainsboro w-[1110px] h-[528px]" />
       <div className="flex top-[104px] left-[747px] w-[314px] h-80">
         <div className="flex top-[0px] left-[14px] tracking-[0.02em] inline-block w-[300px] h-80">
@@ -109,8 +109,8 @@
   );
 };
 
-export default Footer;*/
-import React from "react";
+export default Footer;
+/*import React from "react";
 const Footer = () => {
   return (
 <div className="footer">
@@ -143,4 +143,4 @@ const Footer = () => {
 </div>
   );
 }
-export default Footer;
+export default Footer;*/

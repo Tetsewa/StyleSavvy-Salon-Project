@@ -12,8 +12,8 @@ const Navbar = () => {
         />
         <div className="flex items-center gap-[30px] [filter:drop-shadow(0px_4px_4px_rgba(0,_0,_0,_0.25))]">
           <Link to={`/`} className="text-black">Home</Link>
-          <Link to={`/`} className="text-black">About Us</Link>
-          <Link to={`/`} className="text-black">Make An Appointment</Link>
+          <Link to={`/About Us`} className="text-black">About Us</Link>
+          <Link to={`/MakeAnAppointment`} className="text-black">Make An Appointment</Link>
           <Link to={`/`} className="text-black">Services/Prices</Link>
           <Link to={`/`} className="text-black">Team</Link>
 
