@@ -12,7 +12,7 @@ const Home = () => {
             <img
                 className="absolute top-[0px] left-[0px] w-[1110px] h-[488px] object-cover"
                 alt=""
-                src="/parallaxbackgroundwithhairsaloninterior-10779113827-1@2x.png"
+                src="/backgroundImage.png"
             />
             <div className="absolute top-[585px] left-[142px] text-[64px] tracking-[0.02em] capitalize font-alex-brush text-transparent !bg-clip-text [background:linear-gradient(#AD5133,_#AD5133),_#000] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] inline-block w-[796px] h-[58px]">
                 What Customers Say About Us
