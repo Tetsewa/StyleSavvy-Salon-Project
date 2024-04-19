@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+
+
 
 function About() {
     return (
         <div>
+            <img
+                className="absolute top-[0px] left-[0px] w-[1110px] h-[488px] object-cover"
+                alt=""
+                src="/backgroundImage.png"
+            />
             <div className="absolute top-[596px] left-[16px] text-[32px] tracking-[0.02em] capitalize inline-block w-[267px] h-9">
                 Home/About Us
             </div>
@@ -28,7 +35,7 @@ function About() {
                         <span>
                             Founded in 2010, StyleSavvy has quickly become a trusted name in
                             the beauty industry, known for our commitment to excellence and
-                            passion for creativity. Our founder, [Founder's Name], envisioned
+                            passion for creativity. Our founder, Sarah Lewis, envisioned
                             a salon that would not only deliver exceptional hair services but
                             also provide a welcoming and inclusive environment where clients
                             could feel pampered and empowered.
