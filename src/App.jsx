@@ -54,7 +54,7 @@ function App() {
     <Routes>
       {/* <Route path="/" element={<NavBar />} /> */}
        {/* <Route path="/Footer" element={<Footer />} />  */}
-       <Route path="/Home" element={<Home/>} />
+       <Route path="/" element={<Home/>} />
        <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
     </Routes>
     <Footer/>
