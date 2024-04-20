@@ -11,36 +11,36 @@ import React from 'react';
 export default Home;*/
 const Home = () => {
     return (
-      <div className="w-full relative bg-white h-[1586px] overflow-hidden text-left text-mini text-black font-fira-sans">
+      <div className=" overflow-hidden text-left text-mini text-black font-fira-sans">
         <img
-          className="flex top-[0px] left-[0px] w-[1110px] h-[488px] object-cover"
+          className=" object-cover"
           alt=""
           src="/parallaxbackgroundwithhairsaloninterior-10779113827-1@2x.png"
         />
-        <div className="flex top-[585px] left-[142px] text-[64px] tracking-[0.02em] capitalize font-alex-brush text-transparent !bg-clip-text [background:linear-gradient(#ad5133,_#ad5133),_#000] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] inline-block w-[796px] h-[58px]">
+        <div className=" text-[64px] tracking-[0.02em] capitalize font-alex-brush text-transparent !bg-clip-text [background:linear-gradient(#ad5133,_#ad5133),_#000] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] inline-block w-[796px] h-[58px]">
           What Customers Say About Us
         </div>
-        <div className="flex top-[680px] left-[399px] w-[295px] h-[409px]">
-          <div className="flex top-[95px] left-[0px] bg-gainsboro w-[295px] h-[314px]" />
+        <div className="">
+          <div className=" bg-gainsboro " />
           <img
-            className="flex top-[0px] left-[57px] rounded-[50%] w-[188px] h-[186px] object-cover"
+            className="rounded-[50%]  object-cover"
             alt=""
             src="/ellipse-9@2x.png"
           />
-          <div className="flex top-[194px] left-[49px] tracking-[0.02em] inline-block w-[218px] h-[186px]">
+          <div className=" tracking-[0.02em] inline-block ">
             My stylist, Sarah, was an absolute gem! She took the time to listen to
             my hair concerns and understand the look I wanted to achieve. She
             asked insightful questions about my hair texture, styling routine, and
             lifestyle to ensure that the haircut would suit me perfectly.
           </div>
-          <div className="flex top-[380px] left-[49px] tracking-[0.02em] inline-block w-[193px] h-[29px]">
+          <div className="tracking-[0.02em] inline-block ">
             Rating: ⭐⭐⭐⭐⭐
           </div>
         </div>
-        <div className="flex top-[680px] left-[43px] w-[295px] h-[409px]">
-          <div className="flex top-[95px] left-[0px] bg-gainsboro w-[295px] h-[314px]" />
+        <div className="">
+          <div className=" bg-gainsboro " />
           <img
-            className="flex top-[0px] left-[57px] rounded-[50%] w-[188px] h-[186px] object-cover"
+            className="rounded-[50%]  object-cover"
             alt=""
             src="/ellipse-9@2x.png"
           />
