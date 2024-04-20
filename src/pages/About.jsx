@@ -4,49 +4,49 @@ import React from 'react';
 
 function About() {
     return (
-        <div>
+        <div >
             <img
-                className="object-cover"
+                className="w-full object-cover"
                 alt=""
                 src="/backgroundImage.png"
             />
-            <div className="tracking-[0.02em] capitalize  w-[267px] h-9">
+            <div className="tracking-[0.02em] capitalize  w-[267px] h-9 m-5">
                 Home/About Us
             </div>
-            <div className="inline-block w-[927px] h-[702px] [text-shadow:1px_0_0_rgba(0,_0,_0,_0),_0_1px_0_rgba(0,_0,_0,_0),_-1px_0_0_rgba(0,_0,_0,_0),_0_-1px_0_rgba(0,_0,_0,_0)] text-base">
-                <p className="m-0 text-[20px]">
+            <div className="inline-block w-[927px] h-[702px] [text-shadow:1px_0_0_rgba(0,_0,_0,_0),_0_1px_0_rgba(0,_0,_0,_0),_-1px_0_0_rgba(0,_0,_0,_0),_0_-1px_0_rgba(0,_0,_0,_0)] text-base m-5 text-justify">
+                <p className="m-0 text-[30px] font-alex-brush">
                     <b>{`About StyleSavvy `}</b>
                 </p>
                 <p className="m-0">
                     <span>
-                        <span>
+                        <p>
                             Welcome to StyleSavvy, your premier destination for expert hair
-                            care and Nail services in the heart of the city. At StyleSavvy, we
-                            believe that your hair is your ultimate fashion accessory, and our
+                            care and nail services in the heart of the city. At StyleSavvy, we
+                            believe that your every part of your body can be your fashion accessory, and our
                             mission is to help you express your unique style and personality
-                            through beautiful, healthy hair.
-                        </span>
+                            through a beautiful, healthy body.
+                        </p>
                     </span>
                 </p>
                 <p className="m-0">
-                    <span>
-                        <span>&nbsp;</span>
-                        <b className="font-alegreya">Our Story</b>
-                        <span>
+                    <p>
+
+                        <div className="font-bold font-alex-brush">Our Story</div>
+                        <p>
                             Founded in 2010, StyleSavvy has quickly become a trusted name in
                             the beauty industry, known for our commitment to excellence and
                             passion for creativity. Our founder, Sarah Lewis, envisioned
-                            a salon that would not only deliver exceptional hair services but
+                            a salon that would not only deliver exceptional services but
                             also provide a welcoming and inclusive environment where clients
                             could feel pampered and empowered.
-                        </span>
-                    </span>
+                        </p>
+                    </p>
                 </p>
                 <p className="m-0">
-                    <span>
-                        <span>&nbsp;</span>
-                        <b className="font-alegreya">Our Philosophy</b>
-                        <span>
+                    <p>
+
+                        <div className="font-bold font-alex-brush">Our Philosophy</div>
+                        <p>
                             At StyleSavvy, we believe in the transformative power of a great
                             hairstyle. Whether you're looking for a chic haircut, a vibrant
                             colour transformation, or a stunning up-do for a special occasion,
@@ -54,24 +54,24 @@ function About() {
                             reality. We pride ourselves on staying up-to-date with the latest
                             trends and techniques in hairdressing, ensuring that you always
                             leave our salon feeling confident and beautiful.
-                        </span>
-                    </span>
+                        </p>
+                    </p>
                 </p>
                 <p className="m-0">
-                    <span>
-                        <span>&nbsp;</span>
-                        <b className="font-alegreya">Why Choose StyleSavvy?</b>
-                        <span>&nbsp;</span>
-                    </span>
+                    <p>
+
+                        <div className="font-alex-brush font-bold">Why Choose StyleSavvy?</div>
+
+                    </p>
                 </p>
                 <ul className="m-0 pl-[21px]">
                     <li className="mb-0">
-                        <span>
-                            <span>
+                        <p>
+                            <p>
                                 Expertise: Our team of stylists are highly trained professionals
                                 with years of experience in the industry.
-                            </span>
-                        </span>
+                            </p>
+                        </p>
                     </li>
                     <li className="mb-0">
                         <span>

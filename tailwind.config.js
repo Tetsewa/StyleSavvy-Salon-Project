@@ -8,6 +8,12 @@ module.exports = {
         darkslategray: "#353331",
         black: "#000",
         gainsboro: "#d9d9d9",
+        firstcolor: "#ffaaaa",
+        secondcolor: "#e37070",
+        thirdcolor: "#c7004c",
+        fourthcolor: "#8f1537",
+        fifthcolor: "#414141"
+
       },
       spacing: {},
       fontFamily: {

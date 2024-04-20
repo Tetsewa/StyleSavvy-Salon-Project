@@ -92,8 +92,7 @@ const Home = () => {
                         My nail artist, Sarah was a true artist! She took the time to listen
                         to my nail art ideas and preferences, offering valuable suggestions
                         and creative insights along the way. Her passion for her craft was
-                        evident as she meticulously crafted each nail design with precision
-                        and care.
+                        evident.
                     </p>
                     <p className="tracking-[0.02em] inline-block w-[193px] h-[29px]">
                         Rating: ⭐⭐⭐⭐⭐
