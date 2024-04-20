@@ -15,16 +15,16 @@ const Team = () => {
         <img
           className=" object-cover"
           alt=""
-          src="/parallaxbackgroundwithhairsaloninterior-10779113827-1@2x.png"
+          src="salonbg.png"
         />
-        <div className=" tracking-[0.02em] capitalize  ">
+        <span> 
           Our Team
-        </div>
+        </span>
         <div className=" tracking-[0.02em] capitalize font-alegreya  ">
           Home/Team
         </div>
         <div className="space-x-20 bg-oldlace">
-           <div className="inline-block w-[218px] h-[186px]" > 
+           <div className="inline-block " > 
             
             <img
               className=" object-contain"
@@ -35,7 +35,7 @@ const Team = () => {
               <div className=" tracking-[0.02em]  capitalize font-semibold  ">
                 Sarah watson
               </div>
-              <div className=" text-base tracking-[0.02em] leading-[30px] capitalize font-medium font-roboto inline-block w-[226.6px] h-[18.1px] opacity-[0.6]">{`Nail & Skin Care specialist`}</div>
+              <div className=" text-base tracking-[0.02em]  capitalize font-medium font-roboto inline-block ">Nail & Skin Care specialist</div>
             </div>
             
           
