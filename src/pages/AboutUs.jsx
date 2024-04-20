@@ -12,10 +12,15 @@ import React from 'react'
 function About() {
     return (
         <div>
-            <div className="absolute top-[596px] left-[16px] text-[32px] tracking-[0.02em] capitalize inline-block w-[267px] h-9">
+        <img
+                className=" object-cover"
+                alt=""
+                src="/backgroundImage.png"
+            />
+            <div className=" text-[32px] tracking-[0.02em] capitalize inline-block  ">
                 Home/About Us
             </div>
-            <div className="absolute top-[722px] left-[16px] tracking-[0.02em] inline-block w-[927px] h-[702px] [text-shadow:1px_0_0_rgba(0,_0,_0,_0),_0_1px_0_rgba(0,_0,_0,_0),_-1px_0_0_rgba(0,_0,_0,_0),_0_-1px_0_rgba(0,_0,_0,_0)] text-base">
+            <div className=" tracking-[0.02em] inline-block  [text-shadow:1px_0_0_rgba(0,_0,_0,_0),_0_1px_0_rgba(0,_0,_0,_0),_-1px_0_0_rgba(0,_0,_0,_0),_0_-1px_0_rgba(0,_0,_0,_0)] text-base">
                 <p className="m-0 text-[20px]">
                     <b>{`About StyleSavvy `}</b>
                 </p>
