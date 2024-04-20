@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import MakeAnAppointment from "./pages/MakeAnAppointment"
+import Services from "./pages/Services";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
+        <Route path="/Services" element={<Services />} />
       </Routes>
       <Footer />
     </div>

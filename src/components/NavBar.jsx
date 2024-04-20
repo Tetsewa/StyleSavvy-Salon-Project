@@ -15,8 +15,8 @@ const Navbar = () => {
         <div className="flex gap-5 justify-center items-center hidden md:flex">
           <Link to={`/`} className="text-black">Home</Link>
           <Link to={`/About`} className="text-black">About Us</Link>
-          <Link to={`/`} className="text-black">Make An Appointment</Link>
-          <Link to={`/`} className="text-black">Services/Prices</Link>
+          <Link to={`/MakeAnAppointment`} className="text-black">Make An Appointment</Link>
+          <Link to={`/Services`} className="text-black">Services/Prices</Link>
           <Link to={`/`} className="text-black">Team</Link>
         </div>
 
