@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="w-full flex justify-center relative bg-white overflow-hidden text-left text-mini text-white font-inter">
-      <div className="flex justify-between top-[0px] left-[0px] w-[100%] xl:w-[1280px]">
+    <nav>
+    {/* <div className="w-full flex justify-center relative bg-white overflow-hidden text-left text-mini text-white font-inter"> */}
+      {/* <div className="flex justify-between top-[0px] left-[0px] w-[100%] xl:w-[1280px]"> */}
+      <div className="flex justify-between px-3">
         <img
-          className="flex top-[0px] left-[0px] w-[160px]"
-          alt=""
-          src="/stylesavvy-logo-png-1@2x.png"
+          // className="flex top-[0px] left-[0px] w-[160px]"
+          alt="logo"
+          src="/stylesavvy-logo-png-1@2x.png" width={140} height={170}
         />
-        <div className="flex items-center gap-[30px] [filter:drop-shadow(0px_4px_4px_rgba(0,_0,_0,_0.25))]">
+        {/* <div className="flex items-center gap-[30px] [filter:drop-shadow(0px_4px_4px_rgba(0,_0,_0,_0.25))]"> */}
+        <div className="flex gap-5 justify-center items-center hidden md:flex">
           <Link to={`/`} className="text-black">Home</Link>
           <Link to={`/AboutUs`} className="text-black">About Us</Link>
           <Link to={`/MakeAnAppointment`} className="text-black">Make An Appointment</Link>
@@ -23,7 +26,7 @@ const Navbar = () => {
           <a className="text-black">Team</a> */}
         </div>
 
-        <div className="flex items-center  top-0 right-30 font-semibold">
+        <div className="flex items-center  font-semibold mr-4">
           <button className="flex bg-black text-white p-4 rounded">My Reservation</button>
           {/* <button class="text-left">Left-aligned Button</button> */}
 
@@ -56,7 +59,7 @@ const Navbar = () => {
           </div>
         </div> */}
       </div>
-    </div>
+    </nav>
   );
 };
 
