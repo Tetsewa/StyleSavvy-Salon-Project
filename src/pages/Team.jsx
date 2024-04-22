@@ -15,7 +15,9 @@ const Team = () => {
         <img
           className=" object-cover"
           alt=""
-          src="salonbg.png"
+          width={1200}
+          height={1000}
+          src="/vecteezy_beauty-salon-interior_27819575.jpg"
         />
         <span> 
           Our Team
