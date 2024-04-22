@@ -145,7 +145,7 @@ function About() {
             <img
                 className="w-full object-cover"
                 alt=""
-                src="/salonbg.png"
+                src="/vecteezy_beauty-salon-interior_27819575.jpg"
             />
             <div className="tracking-[0.02em] capitalize  w-[267px] h-9 m-5">
                 Home/About Us

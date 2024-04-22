@@ -13,6 +13,7 @@ import MakeAnAppointment from "./pages/MakeAnAppointment";
 import AboutUs from "./pages/AboutUs";
 import Team from "./pages/Team";
 
+
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -62,6 +63,7 @@ function App() {
        {/* <Route path="/Services" element={<Services />} />  */}
        <Route path="/Team" element={<Team />} />
     </Routes>
+    
      <Footer/> 
     </div>
   );
