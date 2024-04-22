@@ -20,10 +20,10 @@ const Team = () => {
           src="/vecteezy_beauty-salon-interior_27819575.jpg"
         />
         <span> 
-          Our Team
+          <h1>Our Team</h1>
         </span>
         <div className=" tracking-[0.02em] capitalize font-alegreya  ">
-          Home/Team
+          <h1>Home/Team</h1>
         </div>
         <div className="space-x-20 bg-oldlace">
            <div className="inline-block " > 
@@ -34,7 +34,7 @@ const Team = () => {
               src="/team2.png"
             />
               <div className="rounded-t-none rounded-b-3xs bg-oldlace " />
-              <div className=" tracking-[0.02em]  capitalize font-semibold  ">
+              <div className=" justify-center items-center tracking-[0.02em]  capitalize font-semibold  ">
                 Sarah watson
               </div>
               <div className=" text-base tracking-[0.02em]  capitalize font-medium font-roboto inline-block ">Nail & Skin Care specialist</div>
