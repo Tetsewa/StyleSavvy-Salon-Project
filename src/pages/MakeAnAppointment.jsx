@@ -64,7 +64,9 @@
 //   export default MakeAnAppointment;
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { DayPicker } from 'react-day-picker'
+//import { DayPicker } from 'react-day-picker'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 const MakeAnAppointment = () =>  {
@@ -101,14 +103,14 @@ const MakeAnAppointment = () =>  {
         alt=""
            width={1000}
           height={600}
-           src="/vecteezy_beauty-salon-interior_27819575.jpg"
+           src="/vecteezy_beauty-salon-interior_27819575.jpg "
            //src="styleSavvywriting.png"
         />
         <img 
            alt=""
            width={150}
           height={150}
-          src="styleSavvywriting.png" />
+          src="styleSavvywriting.png " />
           
       <h1>Make An Appointment</h1>
       <form onSubmit={handleSubmit}>
@@ -155,12 +157,17 @@ const MakeAnAppointment = () =>  {
             onChange={handleChange} 
             required 
           />
-        </div><br></br>
+        </div>
+        <DatePicker
+
+showTimeSelect
+      />
         {/* Submit Button */}
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md" ><Link to="/Services" className=" text-white font-bold py-2 px-4 rounded">NEXT</Link></button>
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md" ><Link to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>
         
       </form><br></br>
-      <DayPicker/>
+      {/* <DayPicker/> */}
+      
      
     </div>
   );
