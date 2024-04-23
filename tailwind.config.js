@@ -9,6 +9,13 @@ module.exports = {
         black: "#000",
         gainsboro: "#d9d9d9",
       },
+      theme: {
+        extend: {
+          zIndex: {
+            '100': '100',
+          }
+        }
+      },
       spacing: {},
       fontFamily: {
         fontawesome: "FontAwesome",
