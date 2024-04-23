@@ -22,8 +22,16 @@ function Services() {
 
   return (
     <div>
+     <div className='relative  '>
+                <img
+                    className="w-full"
+                    alt=""
+                    width={400}
+                    height={400}
+                    src="/vecteezy_beauty-salon-interior_27819575.jpg"
+                /></div>
     <img className=" object-cover"
-        alt="" src="hairservice.png" width={500} height={500} />
+        alt="" src="hairservice.png" width={250} height={250} />
       <h1>Hair Services</h1>
      
       <select value={selectedService} onChange={handleServiceChange} className="px-4 py-2 border rounded-md">
