@@ -70,6 +70,10 @@ import "react-datepicker/dist/react-datepicker.css";
 
 
 const MakeAnAppointment = () =>  {
+  const [startDate, setStartDate] = useState(new Date());
+  const [startTime, setStartTime] = useState(new Date());
+
+
   
 
   // Step 1: Setup State for Form Data
@@ -158,20 +162,43 @@ const MakeAnAppointment = () =>  {
             required 
           />
         </div>
-        <DatePicker
+        </form><br></br>
+       
 
-showTimeSelect
-      />
-        {/* Submit Button */}
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md" ><Link to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>
-        
-      </form><br></br>
-      {/* <DayPicker/> */}
+
       
+      
+            
+     
+        <div classname = "flex">
+
+<DatePicker className = "w-2/5"
+  selected={startDate}
+  onChange={(date) => setStartDate(date)}
+  timeInputLabel="Date:"
+  dateFormat="MM/dd/yyyy"
+/>
+
+<DatePicker className="w-2/5"
+  selected={startTime}
+  onChange={(date) => setStartTime(date)}
+  showTimeSelect
+  showTimeSelectOnly
+  timeIntervals={30}
+  timeCaption="Time"
+  dateFormat="h:mm aa"
+/>
+
+
+</div>
+        {/* Submit Button */}
+      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md" ><Link to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>
+    
      
     </div>
   );
 }
+
 
 export default MakeAnAppointment;
 
