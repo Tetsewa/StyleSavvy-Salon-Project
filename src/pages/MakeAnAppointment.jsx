@@ -67,6 +67,7 @@ import { Link } from 'react-router-dom';
 //import { DayPicker } from 'react-day-picker'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import HomeBanner from '../components/HomeBanner';
 
 
 const MakeAnAppointment = () =>  {
@@ -102,19 +103,7 @@ const MakeAnAppointment = () =>  {
 
   return (
     <div>
-     <img 
-          className=" object-cover"
-        alt=""
-           width={1000}
-          height={600}
-           src="/vecteezy_beauty-salon-interior_27819575.jpg "
-           //src="styleSavvywriting.png"
-        />
-        <img 
-           alt=""
-           width={150}
-          height={150}
-          src="styleSavvywriting.png " />
+     <HomeBanner/>
           
       <h1>Make An Appointment</h1>
       <form onSubmit={handleSubmit}>

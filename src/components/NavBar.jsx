@@ -117,8 +117,8 @@ const Navbar = () => {
 
 
       {menuOpen && (
-        <div>
-          <div className="flex flex-col items-center justify-center gap-5">
+        <div >
+          <div className="flex flex-col items-center justify-center gap-5 ">
             <Link to={`/`} className="text-black">Home</Link>
             <Link to={`/About`} className="text-black">About Us</Link>
             <Link to={`/MakeAnAppointment`} className="text-black">Make An Appointment</Link>

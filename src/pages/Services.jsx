@@ -10,6 +10,7 @@
 
 // export default Services;
 import React, { useState } from 'react';
+import HomeBanner from '../components/HomeBanner';
 
 function Services() {
   // Step 1: Define State for Selected Service
@@ -23,13 +24,8 @@ function Services() {
   return (
     <div>
      <div className='relative  '>
-                <img
-                    className="w-full"
-                    alt=""
-                    width={400}
-                    height={400}
-                    src="/vecteezy_beauty-salon-interior_27819575.jpg"
-                /></div>
+             <HomeBanner/>   
+                </div>
                 <img className=" object-cover"
                  alt="" src="haircut.jpeg" width={190} height={190} />
                 <h1>Hair Services</h1>

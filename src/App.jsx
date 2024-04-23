@@ -56,8 +56,7 @@ function App() {
     <NavBar/>
     
     <Routes>
-      {/* <Route path="/" element={<NavBar />} /> */}
-       {/* <Route path="/Footer" element={<Footer />} />  */}
+      
        <Route path="/" element={<Home/>} />
        <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
        <Route path="/AboutUs" element={<AboutUs />} />
@@ -68,8 +67,5 @@ function App() {
      <Footer/> 
     </div>
   );
-  
-            
-  
 }
 export default App;

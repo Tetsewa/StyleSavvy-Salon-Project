@@ -1,24 +1,10 @@
-/*import React from 'react'
+import React from 'react';
+import HomeBanner from '../components/HomeBanner';
 
-function Team() {
-    return (
-        <div>
-
-        </div>
-    )
-}
-
-export default Team*/
 const Team = () => {
     return (
       <div className=" overflow-hidden text-left  text-black font-alex-brush">
-        <img
-          className=" object-cover"
-          alt=""
-          width={1200}
-          height={1000}
-          src="/vecteezy_beauty-salon-interior_27819575.jpg"
-        />
+        <HomeBanner/>
         <span> 
           <h1>Our Team</h1>
         </span>
