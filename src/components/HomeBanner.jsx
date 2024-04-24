@@ -1,6 +1,6 @@
 export default function HomeBanner(){
     return(
-         <div className='relative  '>
+         <div className='flex  '>
                 <img
                     className="w-full"
                     alt=""
@@ -11,8 +11,8 @@ export default function HomeBanner(){
                     className="flex rounded-[50%] w-48 h-48 justify-center items-center text-lg font-size: 1.125rem ml-40 object-cover"
                     alt=""
                    
-                    width={400}
-                    height={400}
+                    width={300}
+                    height={300}
 
                     src="/styleSavvywriting.png"
                 />

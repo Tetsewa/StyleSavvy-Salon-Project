@@ -110,7 +110,7 @@ const MakeAnAppointment = () =>  {
     <div>
      <HomeBanner/>
           
-      <h1>Make An Appointment</h1>
+      <h1 className="text-3xl font-bold ">Make An Appointment</h1>
       {/* <h1>Hair Services</h1> */}
      
           <span className=" justify-between px-3"> <select value={selectedService} onChange={handleServiceChange} className="px-4 py-2 border rounded-md">
@@ -123,8 +123,8 @@ const MakeAnAppointment = () =>  {
            <option value="Hair Styling"> Updo/Event Styling - €70.00</option>
            <option value="Hair Styling"> Deep Conditioning Treatment - €50.00</option>
            <option value="Hair Styling"> Keratin Treatment - €80.00</option>
-           <option value="Hair Styling">Scalp Treatment - €60.00 </option>
-           <option value="Hair Styling"> Bridal Hair(Including trial) - €50.00 </option>
+           <option value="Scalp Treatment">Scalp Treatment - €60.00 </option>
+           <option value="Bridal Hair"> Bridal Hair(Including trial) - €50.00 </option>
         
         
         
@@ -172,7 +172,7 @@ const MakeAnAppointment = () =>  {
         {/* First Name */}
         <div>
           <label >First Name:</label>
-          <input 
+          <input className="mt-5"
             type="text" 
             name="firstName" 
             value={formData.firstName} 
@@ -205,7 +205,7 @@ const MakeAnAppointment = () =>  {
         {/* Email */}
         <div>
           <label>E-mail ID:</label>
-          <input 
+          <input className="mt-2"
             type="email" 
             name="email" 
             value={formData.email} 
@@ -223,14 +223,14 @@ const MakeAnAppointment = () =>  {
      
         <div classname = "flex">
 
-<DatePicker className = "w-2/5"
+<DatePicker className = "w-2/5 float-center -mt-10"
   selected={startDate}
   onChange={(date) => setStartDate(date)}
   timeInputLabel="Date:"
   dateFormat="MM/dd/yyyy"
 />
 
-<DatePicker className="w-2/5"
+<DatePicker className="w-2/5 float-center -mt-10"
   selected={startTime}
   onChange={(date) => setStartTime(date)}
   showTimeSelect
@@ -243,7 +243,7 @@ const MakeAnAppointment = () =>  {
 
 </div>
         {/* Submit Button */}
-      <button type="submit" className=" float-right justify-center bg-blue-500 text-white py-2 px-4 rounded-md" ><Link to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>
+      <button type="submit" className=" float-right -mt-12 justify-center bg-blue-500 text-white py-2 px-4 rounded-md" ><Link to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>
     
      
     </div>
