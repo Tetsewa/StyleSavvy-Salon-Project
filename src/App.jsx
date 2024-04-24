@@ -5,12 +5,15 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Footer from "./components/FooterTwo";
+//import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import MakeAnAppointment from "./pages/MakeAnAppointment"
+import MakeAnAppointment from "./pages/MakeAnAppointment";
+import AboutUs from "./pages/AboutUs";
+import Team from "./pages/Team";
 import Services from "./pages/Services";
+import MyReservation from "./pages/MyReservation";
 
 
 function App() {
@@ -52,21 +55,20 @@ function App() {
   return (
     <div>
       <NavBar />
+
       <Routes>
-        {/* <Route path="/" element={<NavBar />} /> */}
-        {/* <Route path="/Footer" element={<Footer />} />  */}
-        {/* <Route path="/" element={<NavBar />} /> */}
-        {/* <Route path="/Footer" element={<Footer />} />  */}
+
         <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
         <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/Services" element={<Services />} />
+        <Route path="/Team" element={<Team />} />
+        <Route path="/MyReservation" element={MyReservation} />
       </Routes>
+
       <Footer />
     </div>
   );
-
-
-
 }
+
 export default App;

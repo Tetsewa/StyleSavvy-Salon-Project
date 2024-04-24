@@ -1,12 +1,27 @@
+// import React from 'react'
+
+// function Services() {
+//     return (
+//         <div>
+
+//         </div>
+//     )
+// }
+
+// export default Services;
 import React from 'react';
-import Calendar from 'react-calendar';
+import HomeBanner from '../components/HomeBanner';
 
 function Services() {
+
+
     return (
         <div>
 
+            <HomeBanner/>
+
         </div>
-    )
+    );
 }
 
-export default Services
+export default Services;

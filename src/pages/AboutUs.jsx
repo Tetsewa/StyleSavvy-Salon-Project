@@ -1,15 +1,11 @@
 import React from 'react';
-
+import HomeBanner from '../components/HomeBanner';
 
 
 function About() {
     return (
         <div >
-            <img
-                className="w-full object-cover"
-                alt=""
-                src="/backgroundImage.png"
-            />
+            <HomeBanner/>
             <div className="tracking-[0.02em] capitalize  w-[267px] h-9 m-5">
                 Home/About Us
             </div>
@@ -17,7 +13,7 @@ function About() {
                 <p className="m-0 text-[30px] font-alex-brush">
                     <b>{`About StyleSavvy `}</b>
                 </p>
-                <p className="m-0">
+                <p >
                     <span>
                         <p>
                             Welcome to StyleSavvy, your premier destination for expert hair
@@ -28,7 +24,7 @@ function About() {
                         </p>
                     </span>
                 </p>
-                <p className="m-0">
+                <p>
                     <p>
 
                         <div className="font-bold font-alex-brush">Our Story</div>
@@ -42,7 +38,7 @@ function About() {
                         </p>
                     </p>
                 </p>
-                <p className="m-0">
+                <p>
                     <p>
 
                         <div className="font-bold font-alex-brush">Our Philosophy</div>
@@ -57,7 +53,7 @@ function About() {
                         </p>
                     </p>
                 </p>
-                <p className="m-0">
+                <p >
                     <p>
 
                         <div className="font-alex-brush font-bold">Why Choose StyleSavvy?</div>
@@ -100,17 +96,17 @@ function About() {
                         </span>
                     </li>
                 </ul>
-                <p className="m-0">
+                <p >
                     <span>
                         <span>&nbsp;</span>
                     </span>
                 </p>
-                <p className="m-0">
+                <p >
                     <span>
                         <b>Visit Us Today</b>
                     </span>
                 </p>
-                <p className="m-0">
+                <p >
                     <span>
                         <span>
                             Experience the StyleSavvy difference for yourself and discover why
