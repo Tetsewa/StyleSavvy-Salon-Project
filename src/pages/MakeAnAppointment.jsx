@@ -107,41 +107,38 @@ const MakeAnAppointment = () => {
                     {/*Nail services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Nail Services</label>
-                        <select id="hair-services" name="hair-services">
-                            <option value="men-hair-cut-35">Men's Haircut - €35.00</option>
-                            <option value="women-hair-cut-40">Women's Haircut - €40.00</option>
-                            <option value="kids-hair-cut-30">Kids Haircut - €30.00</option>
-                            <option value="blow-out-40">Blow Out - €40.00</option>
-                            <option value="event-styling-70">Updo/Event Styling - €70.00</option>
-                            <option value="deep-codn-treat-50">Deep Conditioning Treatment - €50.00</option>
-                            <option value="keratin-treat-80">Keratin Treatment - €80.00</option>
-                            <option value="scalp-treat-60">Scalp Treatment - €60.00</option>
-                            <option value="bidal-hair-50">Bridal Hair(Including trial) - €50.00</option>
+                        <select id="Nail-services" name="Nail-services">
+                            <option value="classic-Manicure-50">Classic Manicure - €35.00</option>
+                            <option value="Gel-Manicure-30">Gel Manicure- €40.00</option>
+                            <option value="Classic-Pedicure-25">Classic Pedicure- €25.00</option>
+                            <option value="Spa- Pedicure-30">Spa Pedicure - €30.00</option>
+                            <option value="Basic-Nail-Art-50">Basic Nail Art- €50.00</option>
+                            <option value="Intricate-Nail-Art-70">Intricate Nail Art - €70.00</option>
+
                         </select>
                     </div>
 
                     {/*Skin services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Skin Services</label>
-                        <select id="hair-services" name="hair-services">
-                            <option value="men-hair-cut-35">Express Facial - €50.00</option>
-                            <option value="women-hair-cut-40">Signature Facial - €35.00</option>
-                            <option value="kids-hair-cut-30">Hydrating Facial - €25.00</option>
-                            <option value="blow-out-40">Blow Out - €40.00</option>
-                            <option value="event-styling-70">Updo/Event Styling - €70.00</option>
-                            <option value="deep-codn-treat-50">Deep Conditioning Treatment - €50.00</option>
-                            <option value="keratin-treat-80">Keratin Treatment - €80.00</option>
-                            <option value="scalp-treat-60">Scalp Treatment - €60.00</option>
-                            <option value="bidal-hair-50">Bridal Hair(Including trial) - €50.00</option>
+                        <select id="Skin-services" name="Skin-services">
+                            <option value="Express Facial-50">Express Facial - €50.00</option>
+                            <option value="Signature-Facial-35">Signature Facial - €35.00</option>
+                            <option value="Hydrating-Facial-25">Hydrating Facial - €25.00</option>
+                            <option value="Eyebrow-Wax-35">Eyebrow Wax - €35.00</option>
+                            <option value="Lip-Wax-20">Lip Wax - €20.00</option>
+                            <option value="Full-Face_wax-50">Full Face Wax - €50.00</option>
+                            <option value="Brazilian- wax-80">Brazilian Wax - €80.00</option>
+
                         </select>
                     </div>
 
                     {/*Spa services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Spa Services</label>
-                        <select id="hair-services" name="hair-services">
-                            <option value="men-hair-cut-35">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>
-                            <option value="women-hair-cut-40">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>
+                        <select id="Spa-services" name="spa-services">
+                            <option value="Relaxation-Package-150">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>
+                            <option value="PamperMe-Package-200">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>
                         </select>
                     </div>
 
