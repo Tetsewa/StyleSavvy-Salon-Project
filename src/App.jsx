@@ -8,7 +8,7 @@ import {
 //import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home"; 
+import Home from "./pages/Home";
 import MakeAnAppointment from "./pages/MakeAnAppointment";
 import AboutUs from "./pages/AboutUs";
 import Team from "./pages/Team";
@@ -51,21 +51,21 @@ function App() {
 
   return (
     <div>
-    <NavBar/>
-    
-    <Routes>
-      {/* <Route path="/" element={<NavBar />} /> */}
-       {/* <Route path="/Footer" element={<Footer />} />  */}
-       <Route path="/" element={<Home/>} />
-       <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
-       <Route path="/AboutUs" element={<AboutUs />} />
-       <Route path="/Team" element={<Team />} />
-    </Routes>
-    <Footer/>
+      <NavBar />
+
+      <Routes>
+        {/* <Route path="/" element={<NavBar />} /> */}
+        {/* <Route path="/Footer" element={<Footer />} />  */}
+        <Route path="/" element={<Home />} />
+        <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Team" element={<Team />} />
+      </Routes>
+      <Footer />
     </div>
   );
-  
-            
-  
+
+
+
 }
 export default App;
