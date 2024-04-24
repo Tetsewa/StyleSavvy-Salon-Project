@@ -58,12 +58,12 @@ function Services() {
            <select value={selectedService} onChange={handleServiceChange} className="px-4 py-2 border rounded-md">
                    <option value="">Select a service</option>
         
-           <option value="Haircut">Classic Manicure - €50.00</option>
-           <option value="Hair Coloring">Gel manicure - €30.00</option>
-           <option value="Hair Styling"> Classic Pedicure - €25.00</option>
-           <option value="Hair Styling"> Spa Pedicure - €30.00</option>
-           <option value="Hair Styling"> Basic Nail Art(per Nail) - €50.00</option>
-           <option value="Hair Styling"> Intricate Nail Art(Per nail) - €70.00</option>
+           <option value="Classic manicure">Classic Manicure - €50.00</option>
+           <option value="Gel manicure">Gel manicure - €30.00</option>
+           <option value="Classic Pedicure"> Classic Pedicure - €25.00</option>
+           <option value="Spa Pedicure"> Spa Pedicure - €30.00</option>
+           <option value="Basic Nail Art"> Basic Nail Art(per Nail) - €50.00</option>
+           <option value="Intricate Nail Art"> Intricate Nail Art(Per nail) - €70.00</option>
            
         </select>
       {/* Display selected service */}

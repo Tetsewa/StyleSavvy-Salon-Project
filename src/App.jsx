@@ -13,6 +13,7 @@ import MakeAnAppointment from "./pages/MakeAnAppointment";
 import AboutUs from "./pages/AboutUs";
 import Team from "./pages/Team";
 import Services from "./pages/Services";
+import MyReservation from "./pages/MyReservation";
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
        <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/Services" element={<Services />} />
        <Route path="/Team" element={<Team />} />
+       <Route path="/MyReservation" element={MyReservation} />
     </Routes>
     
      <Footer/> 
