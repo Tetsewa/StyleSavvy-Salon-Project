@@ -55,6 +55,8 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<NavBar />} /> */}
         {/* <Route path="/Footer" element={<Footer />} />  */}
+        {/* <Route path="/" element={<NavBar />} /> */}
+        {/* <Route path="/Footer" element={<Footer />} />  */}
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
@@ -63,5 +65,8 @@ function App() {
       <Footer />
     </div>
   );
+
+
+
 }
 export default App;
