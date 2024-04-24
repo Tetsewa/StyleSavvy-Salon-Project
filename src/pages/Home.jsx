@@ -65,15 +65,15 @@ const Home = () => {
 
                 <div className="tracking-[0.02em] inline-block w-[218px] h-[186px]">
                     <img
-                        className="rounded-[50%] w-[188px] h-[186px] object-cover"
+                        className="rounded-[50%] w-[188px] h-[187px] object-cover"
                         alt=""
                         src="/testimonial4.webp"
                     />
-                    <p>
+                    <p >
                         My nail artist, Sarah was a true artist! She took the time to listen
                         to my nail art ideas and preferences, offering valuable suggestions
                         and creative insights along the way. Her passion for her craft was
-                        evident.
+                        evident. I am very happy with her services and highly recommended.
                     </p>
                     <p className="tracking-[0.02em] inline-block w-[193px] h-[29px]">
                         Rating: ⭐⭐⭐⭐⭐
@@ -90,7 +90,7 @@ const Home = () => {
                         The final result was beyond my expectations! Lily's hair looked
                         absolutely adorable, and she couldn't stop smiling when she saw
                         herself in the mirror. Sarah even gave her some cute hair accessories
-                        as a special treat, which made Lily feel like a princess.
+                        as a special treat, which made Lily feel like a princess. I highly recommended .
                     </p>
                     <p className="tracking-[0.02em] inline-block w-[193px] h-[29px]">
                         Rating: ⭐⭐⭐⭐⭐
