@@ -12,6 +12,9 @@ import Home from "./pages/Home";
 import MakeAnAppointment from "./pages/MakeAnAppointment";
 import AboutUs from "./pages/AboutUs";
 import Team from "./pages/Team";
+import Services from "./pages/Services";
+import MyReservation from "./pages/MyReservation";
+
 
 function App() {
   const action = useNavigationType();
@@ -54,18 +57,17 @@ function App() {
       <NavBar />
 
       <Routes>
-        {/* <Route path="/" element={<NavBar />} /> */}
-        {/* <Route path="/Footer" element={<Footer />} />  */}
+
         <Route path="/" element={<Home />} />
         <Route path="/MakeAnAppointment" element={<MakeAnAppointment />} />
         <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Services" element={<Services />} />
         <Route path="/Team" element={<Team />} />
+        <Route path="/MyReservation" element={MyReservation} />
       </Routes>
+
       <Footer />
     </div>
   );
-
-
-
 }
 export default App;

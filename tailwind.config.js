@@ -15,6 +15,13 @@ module.exports = {
         fifthcolor: "#414141"
 
       },
+      theme: {
+        extend: {
+          zIndex: {
+            '100': '100',
+          }
+        }
+      },
       spacing: {},
       fontFamily: {
         fontawesome: "FontAwesome",
