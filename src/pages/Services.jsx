@@ -13,15 +13,15 @@ import React from 'react';
 import HomeBanner from '../components/HomeBanner';
 
 function Services() {
-  
 
-  return (
-    <div>
-    
-             <HomeBanner/>   
-               
-    </div>
-  );
+
+    return (
+        <div>
+
+            <HomeBanner/>
+
+        </div>
+    );
 }
 
 export default Services;

@@ -1,7 +1,6 @@
-
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { SocialIcon } from 'react-social-icons'
+import {SocialIcon} from 'react-social-icons'
 
 export default function Footer() {
     return (
@@ -11,8 +10,8 @@ export default function Footer() {
                     <b>Salon Opening Hours</b>
                 </h3>
                 <p>
-                    Monday to Friday: 9:00 AM - 6:00 PM <br />
-                    Saturday: 9:00 AM - 5:00 PM <br />
+                    Monday to Friday: 9:00 AM - 6:00 PM <br/>
+                    Saturday: 9:00 AM - 5:00 PM <br/>
                     Sunday: Closed
                 </p>
 
@@ -48,7 +47,6 @@ export default function Footer() {
 
                 <h3>
                     <b>Contact Us</b>
-
                 </h3>
 
                 <div className="m-0 whitespace-pre-wrap m-3">
@@ -68,12 +66,10 @@ export default function Footer() {
                     /> info@stylesavvy.nl
                 </div>
                 <div className="space-x-5">
-                    <SocialIcon url="https://twitter.com" />
-                    <SocialIcon url="https://facebook.com" />
-                    <SocialIcon url="https://instagram.com" />
-                    <SocialIcon url="https://youtube.com" />
-
-
+                    <SocialIcon url="https://twitter.com"/>
+                    <SocialIcon url="https://facebook.com"/>
+                    <SocialIcon url="https://instagram.com"/>
+                    <SocialIcon url="https://youtube.com"/>
                 </div>
             </div>
 
