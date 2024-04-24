@@ -70,9 +70,14 @@ import "react-datepicker/dist/react-datepicker.css";
 import HomeBanner from '../components/HomeBanner';
 
 
+
 const MakeAnAppointment = () =>  {
   const [startDate, setStartDate] = useState(new Date());
   const [startTime, setStartTime] = useState(new Date());
+  const [selectedService, setSelectedService] = useState('');
+  const handleServiceChange = (e) => {
+    setSelectedService(e.target.value);
+  };
 
 
   
@@ -106,6 +111,63 @@ const MakeAnAppointment = () =>  {
      <HomeBanner/>
           
       <h1>Make An Appointment</h1>
+      {/* <h1>Hair Services</h1> */}
+     
+          <span className=" justify-between px-3"> <select value={selectedService} onChange={handleServiceChange} className="px-4 py-2 border rounded-md">
+                   <option value="">Hair Services</option>
+        
+           <option value="Haircut">Men's Haircut - €35.00</option>
+           <option value="Hair Coloring">Women's Haircut - €40.00</option>
+           <option value="Hair Styling"> Kids Haircut - €30.00</option>
+           <option value="Hair Styling"> Blow Out - €40.00</option>
+           <option value="Hair Styling"> Updo/Event Styling - €70.00</option>
+           <option value="Hair Styling"> Deep Conditioning Treatment - €50.00</option>
+           <option value="Hair Styling"> Keratin Treatment - €80.00</option>
+           <option value="Hair Styling">Scalp Treatment - €60.00 </option>
+           <option value="Hair Styling"> Bridal Hair(Including trial) - €50.00 </option>
+        
+        
+        
+      </select>
+      {/* Display selected service */}
+      {selectedService && <p>You selected: {selectedService}</p>}</span>
+      <span className=" justify-between px-3"><select value={selectedService} onChange={handleServiceChange} className="px-4 py-2 border rounded-md">
+                   <option value="">Nail Services</option>
+        
+           <option value="Classic manicure">Classic Manicure - €50.00</option>
+           <option value="Gel manicure">Gel manicure - €30.00</option>
+           <option value="Classic Pedicure"> Classic Pedicure - €25.00</option>
+           <option value="Spa Pedicure"> Spa Pedicure - €30.00</option>
+           <option value="Basic Nail Art"> Basic Nail Art(per Nail) - €50.00</option>
+           <option value="Intricate Nail Art"> Intricate Nail Art(Per nail) - €70.00</option>
+           
+        </select>
+      {/* Display selected service */}
+      {selectedService && <p>You selected: {selectedService}</p>}</span>
+      <span className="  "><select value={selectedService} onChange={handleServiceChange} className="px-4 py-2 border rounded-md">
+                   <option value="">Skin Services</option>
+        
+           <option value="Exppress Facial">Express Facial - €50.00</option>
+           <option value="Signature Facial">Signature Facial - €35.00</option>
+           <option value="Hydrating Facial"> Hydrating Facial - €25.00</option>
+           <option value="Eyebrow Wax"> Eyebrow Wax - €35.00</option>
+           <option value="Lip Wax"> Lip Wax - €20.00</option>
+           <option value="Full Face Wax"> Full Face Wax - €50.00</option>
+           <option value="Brazilian Wax"> Brazilian Wax - €80.00</option>
+           
+        </select>
+      {/* Display selected service */}
+      {selectedService && <p>You selected: {selectedService}</p>}</span>
+      <span ><select value={selectedService} onChange={handleServiceChange} className="px-4 py-2 border rounded-md">
+                   <option value="">Spa Services</option>
+        
+           <option value="Relaxation Package">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>
+           <option value="Pamper Me Package ">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>
+           
+           
+        </select>
+      {/* Display selected service */}
+      {selectedService && <p>You selected: {selectedService}</p>}</span>
       <form onSubmit={handleSubmit}>
         {/* First Name */}
         <div>
@@ -181,7 +243,7 @@ const MakeAnAppointment = () =>  {
 
 </div>
         {/* Submit Button */}
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md" ><Link to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>
+      <button type="submit" className=" float-right justify-center bg-blue-500 text-white py-2 px-4 rounded-md" ><Link to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>
     
      
     </div>
