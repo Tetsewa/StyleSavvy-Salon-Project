@@ -5,7 +5,7 @@ import HomeBanner from '../components/HomeBanner';
 function About() {
     return (
         <div >
-           <HomeBanner/>
+            <HomeBanner/>
             <div className="tracking-[0.02em] capitalize  w-[267px] h-9 m-5">
                 Home/About Us
             </div>

@@ -213,144 +213,143 @@ const MakeAnAppointment = () => {
             </form>
             {/* <h1>Hair Services</h1> */}
 
-      {/*      <form onSubmit={handleSubmit}>*/}
-      {/*          /!* First Name *!/*/}
-      {/*          <div>*/}
-      {/*              <label>First Name:</label>*/}
-      {/*              <input className="mt-5"*/}
-      {/*                     type="text"*/}
-      {/*                     name="firstName"*/}
-      {/*                     value={formData.firstName}*/}
-      {/*                     onChange={handleChange}*/}
-      {/*                     required*/}
-      {/*              />*/}
-      {/*          </div>*/}
-      {/*          <br></br>*/}
-      {/*          /!* Last Name *!/*/}
-      {/*          <div>*/}
-      {/*              <label>Last Name:</label>*/}
-      {/*              <input*/}
-      {/*                  type="text"*/}
-      {/*                  name="lastName"*/}
-      {/*                  value={formData.lastName}*/}
-      {/*                  onChange={handleChange}*/}
-      {/*                  required*/}
-      {/*              />*/}
-      {/*          </div>*/}
-      {/*          <br></br>*/}
-      {/*          /!* Phone Number *!/*/}
-      {/*          <div>*/}
-      {/*              <label>Phone/Mobile Number</label>*/}
-      {/*              <input*/}
-      {/*                  type="tel"*/}
-      {/*                  name="phoneNumber"*/}
-      {/*                  value={formData.phoneNumber}*/}
-      {/*                  onChange={handleChange}*/}
-      {/*                  required*/}
-      {/*              />*/}
-      {/*          </div>*/}
-      {/*          <br></br>*/}
-      {/*          /!* Email *!/*/}
-      {/*          <div>*/}
-      {/*              <label>E-mail ID:</label>*/}
-      {/*              <input className="mt-2"*/}
-      {/*                     type="email"*/}
-      {/*                     name="email"*/}
-      {/*                     value={formData.email}*/}
-      {/*                     onChange={handleChange}*/}
-      {/*                     required/>*/}
-      {/*          </div>*/}
-      {/*          <span className=" justify-between px-3">*/}
+            {/*      <form onSubmit={handleSubmit}>*/}
+            {/*          /!* First Name *!/*/}
+            {/*          <div>*/}
+            {/*              <label>First Name:</label>*/}
+            {/*              <input className="mt-5"*/}
+            {/*                     type="text"*/}
+            {/*                     name="firstName"*/}
+            {/*                     value={formData.firstName}*/}
+            {/*                     onChange={handleChange}*/}
+            {/*                     required*/}
+            {/*              />*/}
+            {/*          </div>*/}
+            {/*          <br></br>*/}
+            {/*          /!* Last Name *!/*/}
+            {/*          <div>*/}
+            {/*              <label>Last Name:</label>*/}
+            {/*              <input*/}
+            {/*                  type="text"*/}
+            {/*                  name="lastName"*/}
+            {/*                  value={formData.lastName}*/}
+            {/*                  onChange={handleChange}*/}
+            {/*                  required*/}
+            {/*              />*/}
+            {/*          </div>*/}
+            {/*          <br></br>*/}
+            {/*          /!* Phone Number *!/*/}
+            {/*          <div>*/}
+            {/*              <label>Phone/Mobile Number</label>*/}
+            {/*              <input*/}
+            {/*                  type="tel"*/}
+            {/*                  name="phoneNumber"*/}
+            {/*                  value={formData.phoneNumber}*/}
+            {/*                  onChange={handleChange}*/}
+            {/*                  required*/}
+            {/*              />*/}
+            {/*          </div>*/}
+            {/*          <br></br>*/}
+            {/*          /!* Email *!/*/}
+            {/*          <div>*/}
+            {/*              <label>E-mail ID:</label>*/}
+            {/*              <input className="mt-2"*/}
+            {/*                     type="email"*/}
+            {/*                     name="email"*/}
+            {/*                     value={formData.email}*/}
+            {/*                     onChange={handleChange}*/}
+            {/*                     required/>*/}
+            {/*          </div>*/}
+            {/*          <span className=" justify-between px-3">*/}
 
-      {/*          <select value={selectedService} onChange={handleServiceChange}*/}
-      {/*                  className="px-4 py-2 border rounded-md">*/}
-      {/*             <option value="">Hair Services</option>*/}
+            {/*          <select value={selectedService} onChange={handleServiceChange}*/}
+            {/*                  className="px-4 py-2 border rounded-md">*/}
+            {/*             <option value="">Hair Services</option>*/}
 
-      {/*     <option value="Haircut">Men's Haircut - €35.00</option>*/}
-      {/*     <option value="Hair Coloring">Women's Haircut - €40.00</option>*/}
-      {/*     <option value="Hair Styling"> Kids Haircut - €30.00</option>*/}
-      {/*     <option value="Hair Styling"> Blow Out - €40.00</option>*/}
-      {/*     <option value="Hair Styling"> Updo/Event Styling - €70.00</option>*/}
-      {/*     <option value="Hair Styling"> Deep Conditioning Treatment - €50.00</option>*/}
-      {/*     <option value="Hair Styling"> Keratin Treatment - €80.00</option>*/}
-      {/*     <option value="Scalp Treatment">Scalp Treatment - €60.00 </option>*/}
-      {/*     <option value="Bridal Hair"> Bridal Hair(Including trial) - €50.00 </option>*/}
-
-
-
-      {/*</select>*/}
-      {/*              /!* Display selected service *!/*/}
-      {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
-      {/*          <span className=" justify-between px-3"><select value={selectedService} onChange={handleServiceChange}*/}
-      {/*                                                          className="px-4 py-2 border rounded-md">*/}
-      {/*             <option value="">Nail Services</option>*/}
-
-      {/*     <option value="Classic manicure">Classic Manicure - €50.00</option>*/}
-      {/*     <option value="Gel manicure">Gel manicure - €30.00</option>*/}
-      {/*     <option value="Classic Pedicure"> Classic Pedicure - €25.00</option>*/}
-      {/*     <option value="Spa Pedicure"> Spa Pedicure - €30.00</option>*/}
-      {/*     <option value="Basic Nail Art"> Basic Nail Art(per Nail) - €50.00</option>*/}
-      {/*     <option value="Intricate Nail Art"> Intricate Nail Art(Per nail) - €70.00</option>*/}
-
-      {/*  </select>*/}
-      {/*              /!* Display selected service *!/*/}
-      {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
-      {/*          <span className="  "><select value={selectedService} onChange={handleServiceChange}*/}
-      {/*                                       className="px-4 py-2 border rounded-md">*/}
-      {/*             <option value="">Skin Services</option>*/}
-
-      {/*     <option value="Exppress Facial">Express Facial - €50.00</option>*/}
-      {/*     <option value="Signature Facial">Signature Facial - €35.00</option>*/}
-      {/*     <option value="Hydrating Facial"> Hydrating Facial - €25.00</option>*/}
-      {/*     <option value="Eyebrow Wax"> Eyebrow Wax - €35.00</option>*/}
-      {/*     <option value="Lip Wax"> Lip Wax - €20.00</option>*/}
-      {/*     <option value="Full Face Wax"> Full Face Wax - €50.00</option>*/}
-      {/*     <option value="Brazilian Wax"> Brazilian Wax - €80.00</option>*/}
-
-      {/*  </select>*/}
-      {/*              /!* Display selected service *!/*/}
-      {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
-      {/*          <span><select value={selectedService} onChange={handleServiceChange}*/}
-      {/*                        className="px-4 py-2 border rounded-md">*/}
-      {/*             <option value="">Spa Services</option>*/}
-
-      {/*     <option*/}
-      {/*         value="Relaxation Package">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>*/}
-      {/*     <option*/}
-      {/*         value="Pamper Me Package ">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>*/}
+            {/*     <option value="Haircut">Men's Haircut - €35.00</option>*/}
+            {/*     <option value="Hair Coloring">Women's Haircut - €40.00</option>*/}
+            {/*     <option value="Hair Styling"> Kids Haircut - €30.00</option>*/}
+            {/*     <option value="Hair Styling"> Blow Out - €40.00</option>*/}
+            {/*     <option value="Hair Styling"> Updo/Event Styling - €70.00</option>*/}
+            {/*     <option value="Hair Styling"> Deep Conditioning Treatment - €50.00</option>*/}
+            {/*     <option value="Hair Styling"> Keratin Treatment - €80.00</option>*/}
+            {/*     <option value="Scalp Treatment">Scalp Treatment - €60.00 </option>*/}
+            {/*     <option value="Bridal Hair"> Bridal Hair(Including trial) - €50.00 </option>*/}
 
 
-      {/*  </select>*/}
-      {/*              /!* Display selected service *!/*/}
-      {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
 
-      {/*          <br></br>*/}
-      {/*          <div classname="flex">*/}
+            {/*</select>*/}
+            {/*              /!* Display selected service *!/*/}
+            {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
+            {/*          <span className=" justify-between px-3"><select value={selectedService} onChange={handleServiceChange}*/}
+            {/*                                                          className="px-4 py-2 border rounded-md">*/}
+            {/*             <option value="">Nail Services</option>*/}
 
-      {/*              <DatePicker className="w-2/5 float-center -mt-10"*/}
-      {/*                          selected={startDate}*/}
-      {/*                          onChange={(date) => setStartDate(date)}*/}
-      {/*                          timeInputLabel="Date:"*/}
-      {/*                          dateFormat="MM/dd/yyyy"/>*/}
+            {/*     <option value="Classic manicure">Classic Manicure - €50.00</option>*/}
+            {/*     <option value="Gel manicure">Gel manicure - €30.00</option>*/}
+            {/*     <option value="Classic Pedicure"> Classic Pedicure - €25.00</option>*/}
+            {/*     <option value="Spa Pedicure"> Spa Pedicure - €30.00</option>*/}
+            {/*     <option value="Basic Nail Art"> Basic Nail Art(per Nail) - €50.00</option>*/}
+            {/*     <option value="Intricate Nail Art"> Intricate Nail Art(Per nail) - €70.00</option>*/}
 
-      {/*              <DatePicker className="w-2/5 float-center -mt-10"*/}
-      {/*                          selected={startTime}*/}
-      {/*                          onChange={(date) => setStartTime(date)}*/}
-      {/*                          showTimeSelect*/}
-      {/*                          showTimeSelectOnly*/}
-      {/*                          timeIntervals={30}*/}
-      {/*                          timeCaption="Time"*/}
-      {/*                          dateFormat="h:mm aa"/>*/}
-      {/*          </div>*/}
-      {/*          /!* Submit Button *!/*/}
-      {/*          <button type="submit"*/}
-      {/*                  className=" float-right -mt-12 justify-center bg-blue-500 text-white py-2 px-4 rounded-md"><Link*/}
-      {/*              to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>*/}
-      {/*      </form>*/}
+            {/*  </select>*/}
+            {/*              /!* Display selected service *!/*/}
+            {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
+            {/*          <span className="  "><select value={selectedService} onChange={handleServiceChange}*/}
+            {/*                                       className="px-4 py-2 border rounded-md">*/}
+            {/*             <option value="">Skin Services</option>*/}
+
+            {/*     <option value="Exppress Facial">Express Facial - €50.00</option>*/}
+            {/*     <option value="Signature Facial">Signature Facial - €35.00</option>*/}
+            {/*     <option value="Hydrating Facial"> Hydrating Facial - €25.00</option>*/}
+            {/*     <option value="Eyebrow Wax"> Eyebrow Wax - €35.00</option>*/}
+            {/*     <option value="Lip Wax"> Lip Wax - €20.00</option>*/}
+            {/*     <option value="Full Face Wax"> Full Face Wax - €50.00</option>*/}
+            {/*     <option value="Brazilian Wax"> Brazilian Wax - €80.00</option>*/}
+
+            {/*  </select>*/}
+            {/*              /!* Display selected service *!/*/}
+            {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
+            {/*          <span><select value={selectedService} onChange={handleServiceChange}*/}
+            {/*                        className="px-4 py-2 border rounded-md">*/}
+            {/*             <option value="">Spa Services</option>*/}
+
+            {/*     <option*/}
+            {/*         value="Relaxation Package">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>*/}
+            {/*     <option*/}
+            {/*         value="Pamper Me Package ">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>*/}
+
+
+            {/*  </select>*/}
+            {/*              /!* Display selected service *!/*/}
+            {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
+
+            {/*          <br></br>*/}
+            {/*          <div classname="flex">*/}
+
+            {/*              <DatePicker className="w-2/5 float-center -mt-10"*/}
+            {/*                          selected={startDate}*/}
+            {/*                          onChange={(date) => setStartDate(date)}*/}
+            {/*                          timeInputLabel="Date:"*/}
+            {/*                          dateFormat="MM/dd/yyyy"/>*/}
+
+            {/*              <DatePicker className="w-2/5 float-center -mt-10"*/}
+            {/*                          selected={startTime}*/}
+            {/*                          onChange={(date) => setStartTime(date)}*/}
+            {/*                          showTimeSelect*/}
+            {/*                          showTimeSelectOnly*/}
+            {/*                          timeIntervals={30}*/}
+            {/*                          timeCaption="Time"*/}
+            {/*                          dateFormat="h:mm aa"/>*/}
+            {/*          </div>*/}
+            {/*          /!* Submit Button *!/*/}
+            {/*          <button type="submit"*/}
+            {/*                  className=" float-right -mt-12 justify-center bg-blue-500 text-white py-2 px-4 rounded-md"><Link*/}
+            {/*              to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>*/}
+            {/*      </form>*/}
         </div>
 
     );
 }
 
 export default MakeAnAppointment;
-
