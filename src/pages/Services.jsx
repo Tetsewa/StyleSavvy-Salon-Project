@@ -15,13 +15,13 @@ import HomeBanner from '../components/HomeBanner';
 function Services() {
 
 
-  return (
-    <div>
+    return (
+        <div>
 
-      <HomeBanner />
+            <HomeBanner/>
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default Services;
