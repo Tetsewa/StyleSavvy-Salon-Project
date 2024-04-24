@@ -108,12 +108,12 @@ const MakeAnAppointment = () => {
                     <div className="control">
                         <label htmlFor="phone">Nail Services</label>
                         <select id="Nail-services" name="Nail-services">
-                            <option value="classic-Manicure-50">Classic Manicure - €35.00</option>
-                            <option value="Gel-Manicure-30">Gel Manicure- €40.00</option>
-                            <option value="Classic-Pedicure-25">Classic Pedicure- €25.00</option>
-                            <option value="Spa- Pedicure-30">Spa Pedicure - €30.00</option>
-                            <option value="Basic-Nail-Art-50">Basic Nail Art- €50.00</option>
-                            <option value="Intricate-Nail-Art-70">Intricate Nail Art - €70.00</option>
+                            <option value="classic-manicure-50">Classic Manicure - €35.00</option>
+                            <option value="gel-manicure-30">Gel Manicure- €40.00</option>
+                            <option value="classic-pedicure-25">Classic Pedicure- €25.00</option>
+                            <option value="spa-pedicure-30">Spa Pedicure - €30.00</option>
+                            <option value="basic-nail-art-50">Basic Nail Art- €50.00</option>
+                            <option value="intricate-nail-art-70">Intricate Nail Art - €70.00</option>
 
                         </select>
                     </div>
@@ -122,13 +122,13 @@ const MakeAnAppointment = () => {
                     <div className="control">
                         <label htmlFor="phone">Skin Services</label>
                         <select id="Skin-services" name="Skin-services">
-                            <option value="Express Facial-50">Express Facial - €50.00</option>
-                            <option value="Signature-Facial-35">Signature Facial - €35.00</option>
-                            <option value="Hydrating-Facial-25">Hydrating Facial - €25.00</option>
-                            <option value="Eyebrow-Wax-35">Eyebrow Wax - €35.00</option>
-                            <option value="Lip-Wax-20">Lip Wax - €20.00</option>
-                            <option value="Full-Face_wax-50">Full Face Wax - €50.00</option>
-                            <option value="Brazilian- wax-80">Brazilian Wax - €80.00</option>
+                            <option value="express-facial-50">Express Facial - €50.00</option>
+                            <option value="signature-facial-35">Signature Facial - €35.00</option>
+                            <option value="hydrating-facial-25">Hydrating Facial - €25.00</option>
+                            <option value="eyebrow-wax-35">Eyebrow Wax - €35.00</option>
+                            <option value="lip-wax-20">Lip Wax - €20.00</option>
+                            <option value="full-face-wax-50">Full Face Wax - €50.00</option>
+                            <option value="brazilian-wax-80">Brazilian Wax - €80.00</option>
 
                         </select>
                     </div>
@@ -136,9 +136,9 @@ const MakeAnAppointment = () => {
                     {/*Spa services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Spa Services</label>
-                        <select id="Spa-services" name="spa-services">
-                            <option value="Relaxation-Package-150">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>
-                            <option value="PamperMe-Package-200">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>
+                        <select id="spa-services" name="spa-services">
+                            <option value="relaxation-package-150">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>
+                            <option value="pamperme-package-200">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>
                         </select>
                     </div>
 
