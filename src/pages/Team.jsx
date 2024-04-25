@@ -12,8 +12,8 @@ const Team = () => {
             {/*    <h1>Home/Team</h1>*/}
             {/*</div>*/}
 
-            <div className="control-row">
-                <div className="control">
+            <div className="control-row mb-5 ml-20">
+                <div className="control-column  mr-5">
                     <img className=" object-contain" alt="" src="/team2.png"/>
                     <div className="capitalize font-semibold text-center">
                         Sarah watson
@@ -22,7 +22,7 @@ const Team = () => {
                         & Skin Care specialist
                     </div>
                 </div>
-                <div className="control">
+                <div className="control-column mr-4 -mt-11">
                     <img className=" object-contain" alt="" src="/team1.png"/>
                     <div className="capitalize font-semibold text-center">
                         Jack Wilson
@@ -32,7 +32,7 @@ const Team = () => {
                         & Massage Specialist
                     </div>
                 </div>
-                <div className="control">
+                <div className="control-column -mt-11">
                     <img className=" object-contain" alt="" src="/team3.png"/>
                     <div className="capitalize font-semibold text-center">
                         David Barnes
