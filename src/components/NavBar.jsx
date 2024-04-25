@@ -19,6 +19,7 @@ const Navbar = () => {
             <Link to={`/MakeAnAppointment`} className="text-black">Make An Appointment</Link>
             <Link to={`/Services`} className="text-black">Services/Prices</Link>
             <Link to={`/Team`} className="text-black">Team</Link>
+            <Link to={`/MyReservation`} className="text-black">My Reservation</Link>
 
 
           </div>
@@ -46,9 +47,9 @@ const Navbar = () => {
             </svg>
           </button>
 
-          <div className="hidden md:flex items-center font-semibold mr-4">
+          {/* <div className="hidden md:flex items-center font-semibold mr-4">
             <button className=" bg-black text-white p-4 rounded">My Reservation</button>
-          </div>
+          </div> */}
         </div>
 
 
@@ -67,9 +68,9 @@ const Navbar = () => {
 
               </div>
 
-              <div className="flex items-center justify-center font-semibold mt-5">
+              {/* <div className="flex items-center justify-center font-semibold mt-5">
                 <button className=" bg-black text-white p-4 rounded"><Link to="/MyReservation" className="text-black">MyReservation</Link> </button>
-              </div>
+              </div> */}
 
             </div>
         )}
