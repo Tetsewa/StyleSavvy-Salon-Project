@@ -59,13 +59,13 @@ header h1 {
 }
 
 form {
-  width: 90%;
-  max-width: 40rem;
-  margin: 3rem auto;
-  padding: 2rem;
+  width: 100%;
+  max-width: 65rem;
+  margin: 5rem auto;
+  padding: 3rem;
   background: linear-gradient(180deg, #766583, #654975);
   border-radius: 8px;
-  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 16px 1px rgb(188, 112, 164);
 }
 
 .control,
@@ -179,3 +179,11 @@ fieldset {
   background-color: transparent;
   color: #869999;
 }
+
+.card {
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
