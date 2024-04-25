@@ -10,7 +10,7 @@ import HomeBanner from "../components/HomeBanner";
 
 const MyReservation = () => {
     const [products, setProducts] = useState(null);
-    const [statuses] = useState(['INSTOCK', 'LOWSTOCK', 'OUTOFSTOCK']);
+    const [statuses] = useState(['Confirmed', 'Pending', 'Rejected']);
 
     useEffect(() => {
         ProductService.getProductsMini().then((data) => setProducts(data));
@@ -122,6 +122,12 @@ const MyReservation = () => {
                                 bodyStyle={{textAlign: 'center'}}></Column>
                     </DataTable>
                 </div>
+                <hr/>
+                <p className="form-actions">
+                    <button type="submit" className="button">
+                        Submit!
+                    </button>
+                </p>
             </form>
 
 
