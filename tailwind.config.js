@@ -11,8 +11,8 @@ module.exports = {
         firstcolor: "#ffaaaa",
         secondcolor: "#e37070",
         thirdcolor: "#c7004c",
-        fourthcolor: "#8f1537",
-        fifthcolor: "#414141"
+        fourthcolor: "#766583",
+        fifthcolor: "#a790ac"
 
       },
       theme: {
