@@ -3,14 +3,50 @@ import {Link} from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import HomeBanner from '../components/HomeBanner';
+import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const MakeAnAppointment = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [startTime, setStartTime] = useState(new Date());
 
+    const [formData, setFormData] = useState({
+        // Initialize form fields here
+        id:'',
+        firstName: '',
+        lastName: '',
+        email: '',
+        contactNumber: '',
+        dateScheduled: '',
+        timeScheduled: ''
 
+        // Add more fields as needed
+    });
 
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        console.log(formData);
+        formData.id=uuidv4();
+        formData.dateScheduled=startDate;
+        formData.timeScheduled=startTime;
+        e.preventDefault();
+        try {
+            const response = await axios.post('https://stylesavvy.adaptable.app/reservations', formData);
+            console.log('Response:', response.data);
+            // Optionally handle success response
+        } catch (error) {
+            console.error('Error:', error);
+            // Optionally handle error response
+        }
+    };
 
     return (
         <div>
@@ -18,30 +54,34 @@ const MakeAnAppointment = () => {
 
             {/*<h1 className="text-3xl font-bold ">Make An Appointment</h1>*/}
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2>Make an appointment!</h2>
                 <p>We just need a little bit of data from you to get you started 🚀</p>
 
                 <div className="control-row">
                     <div className="control">
                         <label htmlFor="first-name">First Name</label>
-                        <input type="text" id="first-name" name="first-name"/>
+                        <input type="text" id="first-name" name="firstName" value={formData.firstName}
+                               onChange={handleChange}/>
                     </div>
 
                     <div className="control">
                         <label htmlFor="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name"/>
+                        <input type="text" id="last-name" name="lastName" value={formData.lastName}
+                               onChange={handleChange}/>
                     </div>
                 </div>
 
                 <div className="control">
                     <label htmlFor="email">Email</label>
-                    <input id="email" type="email" name="email"/>
+                    <input id="email" type="email" name="email" value={formData.email}
+                    onChange={handleChange}/>
                 </div>
 
                 <div className="control">
                     <label htmlFor="contact-number">Contact Number</label>
-                    <input type="text" id="contact-number" name="contact-number"/>
+                    <input type="text" id="contact-number" name="contactNumber" value={formData.contactNumber}
+                    onChange={handleChange}/>
                 </div>
 
 
@@ -113,8 +153,12 @@ const MakeAnAppointment = () => {
                     <div className="control">
                         <label htmlFor="phone">Spa Services</label>
                         <select id="spa-services" name="spa-services">
-                            <option value="relaxation-package-150">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>
-                            <option value="pamperme-package-200">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>
+                            <option value="relaxation-package-150">Relaxation Package ( Includes Massage, Facial ,
+                                Manicure ) - €150.00
+                            </option>
+                            <option value="pamperme-package-200">Pamper Me Package ( Includes Pedicure , Scalp teatment,
+                                MakeUp) - €200.00
+                            </option>
                         </select>
                     </div>
 
@@ -183,7 +227,7 @@ const MakeAnAppointment = () => {
                         Reset
                     </button>
                     <button type="submit" className="button">
-                        Book Now
+                        Book Now!
                     </button>
                 </p>
             </form>
