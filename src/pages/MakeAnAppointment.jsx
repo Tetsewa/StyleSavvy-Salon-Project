@@ -19,8 +19,20 @@ const MakeAnAppointment = () => {
         email: '',
         contactNumber: '',
         dateScheduled: '',
-        timeScheduled: ''
-
+        timeScheduled: '',
+        // TODO: below services are static and to be picked from form data
+        services: [
+            {
+                id: 'service-001',
+                serviceName: 'Men\'s Haircut',
+                price: '20'
+            },
+            {
+                id: 'service-002',
+                serviceName: 'Women\'s Haircut',
+                price: '40'
+            }
+        ]
         // Add more fields as needed
     });
 
@@ -107,6 +119,7 @@ const MakeAnAppointment = () => {
                     <div className="control">
                         <label htmlFor="phone">Hair Services</label>
                         <select id="hair-services" name="hair-services">
+                            <option value="">Select....</option>
                             <option value="men-hair-cut-35">Men's Haircut - €35.00</option>
                             <option value="women-hair-cut-40">Women's Haircut - €40.00</option>
                             <option value="kids-hair-cut-30">Kids Haircut - €30.00</option>
@@ -124,6 +137,7 @@ const MakeAnAppointment = () => {
                     <div className="control">
                         <label htmlFor="phone">Nail Services</label>
                         <select id="Nail-services" name="Nail-services">
+                            <option value="">Select....</option>
                             <option value="classic-manicure-50">Classic Manicure - €35.00</option>
                             <option value="gel-manicure-30">Gel Manicure- €40.00</option>
                             <option value="classic-pedicure-25">Classic Pedicure- €25.00</option>
@@ -138,6 +152,7 @@ const MakeAnAppointment = () => {
                     <div className="control">
                         <label htmlFor="phone">Skin Services</label>
                         <select id="Skin-services" name="Skin-services">
+                            <option value="">Select....</option>
                             <option value="express-facial-50">Express Facial - €50.00</option>
                             <option value="signature-facial-35">Signature Facial - €35.00</option>
                             <option value="hydrating-facial-25">Hydrating Facial - €25.00</option>
@@ -152,7 +167,9 @@ const MakeAnAppointment = () => {
                     {/*Spa services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Spa Services</label>
+
                         <select id="spa-services" name="spa-services">
+                            <option value="">Select....</option>
                             <option value="relaxation-package-150">Relaxation Package ( Includes Massage, Facial ,
                                 Manicure ) - €150.00
                             </option>
