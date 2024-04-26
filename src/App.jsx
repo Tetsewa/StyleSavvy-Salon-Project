@@ -14,6 +14,7 @@ import AboutUs from "./pages/AboutUs";
 import Team from "./pages/Team";
 import Services from "./pages/Services";
 import MyReservation from "./pages/MyReservation";
+// import ErrorPage from "./pages/ErrorPage";
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
         <Route path="/Services" element={<Services />} />
         <Route path="/Team" element={<Team />} />
         <Route path="/MyReservation" element={MyReservation} />
+        {/* <Route path="*" element={ErrorPage} /> */}
       </Routes>
 
       <Footer />
