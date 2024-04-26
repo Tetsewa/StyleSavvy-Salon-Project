@@ -7,15 +7,17 @@ import {Dropdown} from 'primereact/dropdown';
 import {Tag} from 'primereact/tag';
 import {ProductService} from '/src/components/ProductService';
 import HomeBanner from "../components/HomeBanner";
+//import axios from "axios";
+//const API_URL = "https://stylesavvy.adaptable.app/"
 
 const MyReservation = () => {
     const [products, setProducts] = useState(null);
-    const [statuses] = useState(['Confirmed', 'Pending', 'Rejected']);
+    const [statuses] = useState(['INSTOCK', 'LOWSTOCK', 'OUTOFSTOCK']);
 
     useEffect(() => {
         ProductService.getProductsMini().then((data) => setProducts(data));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
+   
     const getSeverity = (value) => {
         switch (value) {
             case 'INSTOCK':
@@ -125,8 +127,7 @@ const MyReservation = () => {
                 <hr/>
                 <p className="form-actions">
                     <button type="submit" className="button">
-                        Submit!
-                    </button>
+                        Submit!                    </button>
                 </p>
             </form>
 

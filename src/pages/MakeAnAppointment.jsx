@@ -128,7 +128,7 @@ const MakeAnAppointment = () => {
                             <option value="deep-codn-treat-50">Deep Conditioning Treatment - €50.00</option>
                             <option value="keratin-treat-80">Keratin Treatment - €80.00</option>
                             <option value="scalp-treat-60">Scalp Treatment - €60.00</option>
-                            <option value="bidal-hair-50">Bridal Hair(Including trial) - €50.00</option>
+                            <option value="bridal-hair-50">Bridal Hair(Including trial) - €50.00</option>
                         </select>
                     </div>
 
