@@ -25,12 +25,123 @@ const MakeAnAppointment = () => {
             {
                 id: 'service-001',
                 serviceName: 'Men\'s Haircut',
-                price: '20'
+                price: '€35.00'
             },
             {
                 id: 'service-002',
                 serviceName: 'Women\'s Haircut',
-                price: '40'
+                price: '€40.00'
+            },
+            { 
+                id: 'service-003',
+                serviceName: 'children\'s Haircut',
+                price: '€25.00'
+            },
+            
+            {
+                id: 'service-004',
+                serviceName: 'Blow out',
+                price: '€40.00'
+            },
+            {
+                id: 'service-004',
+                serviceName: 'Updo/Event Styling',
+                price: '€70.00'
+            },
+            {
+                id: 'service-005',
+                serviceName: 'Bridal Hair (including trial)',
+                price: '€150.00'
+            },
+            {
+                id: 'service-006',
+                serviceName: 'Deep Conditioning Treatment',
+                price: '€30.00'
+            },
+            {
+                id: 'service-007',
+                serviceName: 'Keratin Treatment',
+                price: '€200.00'
+            },
+            {
+                id: 'service-008',
+                serviceName: 'Scalp Treatment',
+                price: '€50.00'
+            },
+            {
+                id: 'service-009',
+                serviceName: 'Classic Manicure',
+                price: '€50.00'
+            },
+            {
+                id: 'service-0010',
+                serviceName: 'Gel Manicure',
+                price: '€35.00'
+            },
+            {
+                id: 'service-011',
+                serviceName: 'Classic Pedicure',
+                price: '€25.00'
+            },
+            {
+                id: 'service-012',
+                serviceName: 'Spa Pedicure',
+                price: '€40.00'
+            },
+            {
+                id: 'service-013',
+                serviceName: 'Basic Nail Art (per nail)',
+                price: '€70.00'
+            },
+            {
+                id: 'service-014',
+                serviceName: 'Intricate Nail Art (per nail)',
+                price: '€150.00'
+            },
+            {
+                id: 'service-015',
+                serviceName: 'Express Facial',
+                price: '€50.00'
+            },
+            {
+                id: 'service-016',
+                serviceName: 'Signature Facial',
+                price: '€35.00'
+            },
+            {
+                id: 'service-017',
+                serviceName: 'Hydrating Facial',
+                price: '€25.00'
+            },
+            {
+                id: 'service-018',
+                serviceName: 'Eyebrow Wax',
+                price: '€30.00'
+            },
+            {
+                id: 'service-019',
+                serviceName: 'Lip Wax',
+                price: '€10.00'
+            },
+            {
+                id: 'service-020',
+                serviceName: 'Full Face Wax',
+                price: '€50.00'
+            },
+            {
+                id: 'service-021',
+                serviceName: 'Brazilian Wax',
+                price: '€25.00'
+            },
+            {
+                id: 'service-022',
+                serviceName: 'Relaxation Package (Includes massage, facial, and manicure)',
+                price: '€150.00'
+            },
+            {
+                id: 'service-023',
+                serviceName: 'Pamper Me Package (Includes pedicure, scalp treatment, and makeup)',
+                price: '€120.00'
             }
         ]
         // Add more fields as needed
@@ -248,6 +359,14 @@ const MakeAnAppointment = () => {
                     </button>
                 </p>
             </form>
+            <ul>
+        {formData.services.map(service => (
+          <li key={service.id}>
+            <span>{service.serviceName}</span>
+            <span>{service.price}</span>
+          </li>
+        ))}
+      </ul>
         </div>
 
     );

@@ -1,27 +1,21 @@
-// import React from 'react'
-
-// function Services() {
-//     return (
-//         <div>
-
-//         </div>
-//     )
-// }
-
-// export default Services;
 import React from 'react';
 import HomeBanner from '../components/HomeBanner';
+import PriceTable from '../components/PriceTable';
+
 
 function Services() {
+  //   const [products, setProducts] = useState([]);
+  //   useEffect(() => {
+  //     ProductService.getProductsMini().then(data => setProducts(data));
+  // }, []);
 
+  return (
+    <div>
 
-    return (
-        <div>
-
-            <HomeBanner/>
-
-        </div>
-    );
+      <HomeBanner />
+      <PriceTable />
+    </div>
+  );
 }
 
 export default Services;
