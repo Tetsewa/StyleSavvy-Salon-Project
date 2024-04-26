@@ -46,14 +46,14 @@ const rows4 = [
 
 export default function PriceTable() {
     return (
-        <div >
-            <div classname = 'border-solid border-2 border-indigo-600'> {/* NOT WORKING */}
+        <div className ="grid grid-cols-1 md:grid-cols-2">
+            <div className ="max-w-2xl m-5" > 
             
-            <TableContainer component={Paper}>
-            <Table sx={{ maxWidth: 500 }} aria-label="simple table" >
+            <TableContainer component={Paper} >
+            <Table sx={{ maxWidth: 672 }} aria-label="simple table" >
                 <TableHead>
                     <TableRow className='bg-fifthcolor'>
-                        <TableCell>Hair Services</TableCell>
+                        <TableCell >Hair Services</TableCell>
                         <TableCell align="left">Price</TableCell>
                     </TableRow>
                 </TableHead>
@@ -74,9 +74,9 @@ export default function PriceTable() {
         </TableContainer>
         </div>
 
-        <div classname = 'nail'>
+        <div className ="max-w-2xl m-5" >
             <TableContainer component={Paper}>
-            <Table sx={{ maxWidth: 500 }} aria-label="simple table">
+            <Table sx={{ maxWidth: 672 }} aria-label="simple table">
                 <TableHead>
                     <TableRow className='bg-fifthcolor'>
                         <TableCell>Nail Services</TableCell>
@@ -100,9 +100,9 @@ export default function PriceTable() {
         </TableContainer>
             </div>
 
-            <div classname = 'skin'>
+            <div className ="max-w-2xl m-5">
             <TableContainer component={Paper}>
-            <Table sx={{ maxWidth: 500 }} aria-label="simple table">
+            <Table sx={{ maxWidth: 672 }} aria-label="simple table">
                 <TableHead>
                     <TableRow className='bg-fifthcolor'>
                         <TableCell>Skin Care Services</TableCell>
@@ -126,9 +126,9 @@ export default function PriceTable() {
         </TableContainer>
             </div>
 
-            <div classname = 'spa'>
+            <div className ="max-w-2xl m-5">
             <TableContainer component={Paper}>
-            <Table sx={{ maxWidth: 500 }} aria-label="simple table">
+            <Table sx={{ maxWidth: 672 }} aria-label="simple table">
                 <TableHead>
                     <TableRow className='bg-fifthcolor'>
                         <TableCell>Spa Services</TableCell>
