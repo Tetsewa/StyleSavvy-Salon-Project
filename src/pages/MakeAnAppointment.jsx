@@ -1,43 +1,31 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import HomeBanner from '../components/HomeBanner';
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 
 const MakeAnAppointment = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [startTime, setStartTime] = useState(new Date());
 
+    const [selectedOptionHairServices, setSelectedOptionHairServices] = useState('');
+    const [selectedOptionSkinServices, setSelectedOptionSkinServices] = useState('');
+    const [selectedOptionNailServices, setSelectedOptionNailServices] = useState('');
+    const [selectedOptionSpaServices, setSelectedOptionSpaServices] = useState('');
+
     const [formData, setFormData] = useState({
         // Initialize form fields here
-        id:'',
+        id: '',
         firstName: '',
         lastName: '',
         email: '',
         contactNumber: '',
         dateScheduled: '',
         timeScheduled: '',
-        // TODO: below services are static and to be picked from form data
-        services: [
-            {
-                id: 'service-001',
-                serviceName: 'Men\'s Haircut',
-                price: '€35.00'
-            },
-            {
-                id: 'service-002',
-                serviceName: 'Women\'s Haircut',
-                price: '€40.00'
-            },
-            { 
-                id: 'service-003',
-                serviceName: 'children\'s Haircut',
-                price: '€25.00'
-            },
-        ]
+        services: []
     });
 
     const handleChange = (e) => {
@@ -47,21 +35,83 @@ const MakeAnAppointment = () => {
             [name]: value,
         }));
     };
+    const handleSelectChangeHairServices = (event) => {
+            setSelectedOptionHairServices(getValueById(event.target.value));
+    };
+
+    const handleSelectChangeSkinServices = (event) => {
+        setSelectedOptionSkinServices(getValueById(event.target.value));
+    };
+
+    const handleSelectChangeSpaServices = (event) => {
+        setSelectedOptionSpaServices(getValueById(event.target.value));
+    };
+
+    const handleSelectChangeNailServices = (event) => {
+        setSelectedOptionNailServices(getValueById(event.target.value));
+    };
 
     const handleSubmit = async (e) => {
         console.log(formData);
-        formData.id=uuidv4();
-        formData.dateScheduled=startDate;
-        formData.timeScheduled=startTime;
+        formData.id = uuidv4();
+        formData.dateScheduled = startDate;
+        formData.timeScheduled = startTime;
+        if (selectedOptionHairServices!==null && selectedOptionHairServices !=='') {
+            formData.services.push(selectedOptionHairServices);
+        }
+        if (selectedOptionSkinServices != null && selectedOptionSkinServices !== '') {
+            formData.services.push(selectedOptionSkinServices);
+        }
+        if (selectedOptionNailServices != null && selectedOptionNailServices !== '') {
+            formData.services.push(selectedOptionNailServices);
+        }
+        if (selectedOptionSpaServices != null && selectedOptionSpaServices !== '') {
+            formData.services.push(selectedOptionSpaServices);
+        }
         e.preventDefault();
         try {
             const response = await axios.post('https://stylesavvy.adaptable.app/reservations', formData);
             console.log('Response:', response.data);
-            // Optionally handle success response
         } catch (error) {
             console.error('Error:', error);
-            // Optionally handle error response
         }
+    };
+
+
+    // Load the picklist mapping services
+
+    const [dataMap, setDataMap] = useState(new Map());
+
+    useEffect(() => {
+        // Simulate fetching JSON data (replace with actual fetch call)
+        const fetchData = async () => {
+            try {
+                const response = await fetch('https://json-api.adaptable.app/services'); // Replace 'example.json' with your JSON file or API endpoint
+                const jsonData = await response.json();
+
+                // Convert JSON object to Map
+                const mapData = jsonToMap(jsonData);
+                setDataMap(mapData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []); // Empty dependency array to ensure useEffect runs only once
+
+    // Function to convert JSON object to Map with "id" field as keys
+    const jsonToMap = (json) => {
+        const map = new Map();
+        json.forEach(item => {
+            map.set(item.id, item);
+        });
+        return map;
+    };
+
+    // Function to get value from Map using "id"
+    const getValueById = (id) => {
+        return dataMap.get(id);
     };
 
     return (
@@ -91,38 +141,21 @@ const MakeAnAppointment = () => {
                 <div className="control">
                     <label htmlFor="email">Email</label>
                     <input id="email" type="email" name="email" value={formData.email}
-                    onChange={handleChange}/>
+                           onChange={handleChange}/>
                 </div>
 
                 <div className="control">
                     <label htmlFor="contact-number">Contact Number</label>
                     <input type="text" id="contact-number" name="contactNumber" value={formData.contactNumber}
-                    onChange={handleChange}/>
+                           onChange={handleChange}/>
                 </div>
-
-
-                {/*<div className="control-row">*/}
-                {/*    <div className="control">*/}
-                {/*        <label htmlFor="password">Password</label>*/}
-                {/*        <input id="password" type="password" name="password"/>*/}
-                {/*    </div>*/}
-
-                {/*    <div className="control">*/}
-                {/*        <label htmlFor="confirm-password">Confirm Password</label>*/}
-                {/*        <input*/}
-                {/*            id="confirm-password"*/}
-                {/*            type="password"*/}
-                {/*            name="confirm-password"*/}
-                {/*        />*/}
-                {/*    </div>*/}
-                {/*</div>*/}
 
                 <hr/>
                 <div className="control-row">
                     {/*Hair services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Hair Services</label>
-                        <select id="hair-services" name="hair-services">
+                        <select id="hair-services" name="hair-services" onChange={handleSelectChangeHairServices}>
                             <option value="">Select....</option>
                             <option value="men-hair-cut-35">Men's Haircut - €35.00</option>
                             <option value="women-hair-cut-40">Women's Haircut - €40.00</option>
@@ -140,10 +173,10 @@ const MakeAnAppointment = () => {
                     {/*Nail services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Nail Services</label>
-                        <select id="Nail-services" name="Nail-services">
+                        <select id="nail-services" name="nail-services" onChange={handleSelectChangeNailServices}>
                             <option value="">Select....</option>
                             <option value="classic-manicure-50">Classic Manicure - €35.00</option>
-                            <option value="gel-manicure-30">Gel Manicure- €40.00</option>
+                            <option value="gel-manicure-40">Gel Manicure- €40.00</option>
                             <option value="classic-pedicure-25">Classic Pedicure- €25.00</option>
                             <option value="spa-pedicure-30">Spa Pedicure - €30.00</option>
                             <option value="basic-nail-art-50">Basic Nail Art- €50.00</option>
@@ -155,7 +188,7 @@ const MakeAnAppointment = () => {
                     {/*Skin services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Skin Services</label>
-                        <select id="Skin-services" name="Skin-services">
+                        <select id="skin-services" name="skin-services" onChange={handleSelectChangeSkinServices}>
                             <option value="">Select....</option>
                             <option value="express-facial-50">Express Facial - €50.00</option>
                             <option value="signature-facial-35">Signature Facial - €35.00</option>
@@ -172,17 +205,17 @@ const MakeAnAppointment = () => {
                     <div className="control">
                         <label htmlFor="phone">Spa Services</label>
 
-                        <select id="spa-services" name="spa-services">
+                        <select id="spa-services" name="spa-services" onChange={handleSelectChangeSpaServices}>
                             <option value="">Select....</option>
-                            <option value="relaxation-package-150">Relaxation Package ( Includes Massage, Facial ,
-                                Manicure ) - €150.00
+                            <option value="relaxation-package-150">Relaxation Package(Includes Massage,Facial,Manicure)
+                                - €150.00
                             </option>
-                            <option value="pamperme-package-200">Pamper Me Package ( Includes Pedicure , Scalp teatment,
+                            <option value="pamperme-package-200">Pamper Me Package ( Includes Pedicure , Scalp
+                                treatment,
                                 MakeUp) - €200.00
                             </option>
                         </select>
                     </div>
-
                 </div>
 
                 <div className="control-row">
@@ -207,35 +240,6 @@ const MakeAnAppointment = () => {
                     </div>
 
                 </div>
-
-                {/*<fieldset>*/}
-                {/*    <legend>How did you find us?</legend>*/}
-                {/*    <div className="control">*/}
-                {/*        <input*/}
-                {/*            type="checkbox"*/}
-                {/*            id="google"*/}
-                {/*            name="acquisition"*/}
-                {/*            value="google"*/}
-                {/*        />*/}
-                {/*        <label htmlFor="google">Google</label>*/}
-                {/*    </div>*/}
-
-                {/*    <div className="control">*/}
-                {/*        <input*/}
-                {/*            type="checkbox"*/}
-                {/*            id="friend"*/}
-                {/*            name="acquisition"*/}
-                {/*            value="friend"*/}
-                {/*        />*/}
-                {/*        <label htmlFor="friend">Referred by friend</label>*/}
-                {/*    </div>*/}
-
-                {/*    <div className="control">*/}
-                {/*        <input type="checkbox" id="other" name="acquisition" value="other"/>*/}
-                {/*        <label htmlFor="other">Other</label>*/}
-                {/*    </div>*/}
-                {/*</fieldset>*/}
-
                 <div className="control">
                     <label htmlFor="terms-and-conditions">
                         <input type="checkbox" id="terms-and-conditions" name="terms"/>I
@@ -252,8 +256,6 @@ const MakeAnAppointment = () => {
                     </button>
                 </p>
             </form>
-            
-        
         </div>
 
     );
