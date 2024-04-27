@@ -5,16 +5,19 @@ import "react-datepicker/dist/react-datepicker.css";
 import HomeBanner from '../components/HomeBanner';
 import axios from 'axios';
 import {v4 as uuidv4} from 'uuid';
+import { useNavigate } from 'react-router-dom';
 
 
 const MakeAnAppointment = () => {
     const [startDate, setStartDate] = useState(new Date());
-    const [startTime, setStartTime] = useState(new Date());
+    const [startTime, setStartTime] = useState(new Time());
 
     const [selectedOptionHairServices, setSelectedOptionHairServices] = useState('');
     const [selectedOptionSkinServices, setSelectedOptionSkinServices] = useState('');
     const [selectedOptionNailServices, setSelectedOptionNailServices] = useState('');
     const [selectedOptionSpaServices, setSelectedOptionSpaServices] = useState('');
+
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         // Initialize form fields here
@@ -35,6 +38,9 @@ const MakeAnAppointment = () => {
             [name]: value,
         }));
     };
+   
+       
+    
     const handleSelectChangeHairServices = (event) => {
             setSelectedOptionHairServices(getValueById(event.target.value));
     };
@@ -72,6 +78,10 @@ const MakeAnAppointment = () => {
         try {
             const response = await axios.post('https://stylesavvy.adaptable.app/reservations', formData);
             console.log('Response:', response.data);
+
+            // redirect to reservation page
+            navigate(`/MyReservation/${response.data.id}`)
+
         } catch (error) {
             console.error('Error:', error);
         }
@@ -127,8 +137,8 @@ const MakeAnAppointment = () => {
                 <div className="control-row">
                     <div className="control">
                         <label htmlFor="first-name">First Name</label>
-                        <input type="text" id="first-name" name="firstName" value={formData.firstName}
-                               onChange={handleChange}/>
+                        <input type="text" id="first-name" name="firstName"  value={formData.firstName}
+                                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}/>
                     </div>
 
                     <div className="control">
@@ -149,8 +159,9 @@ const MakeAnAppointment = () => {
                     <input type="text" id="contact-number" name="contactNumber" value={formData.contactNumber}
                            onChange={handleChange}/>
                 </div>
+               
 
-                <hr/>
+               
                 <div className="control-row">
                     {/*Hair services dropdown list*/}
                     <div className="control">
@@ -252,7 +263,7 @@ const MakeAnAppointment = () => {
                         Reset
                     </button>
                     <button type="submit" className="button">
-                        Book Now!
+                    {/* <Link to={`/MyReservation`} className="text-black">Book Now!</Link> */}
                     </button>
                 </p>
             </form>
