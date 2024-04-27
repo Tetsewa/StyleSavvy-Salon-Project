@@ -63,7 +63,7 @@ function App() {
                 <Route path="/AboutUs" element={<AboutUs/>}/>
                 <Route path="/Services" element={<Services/>}/>
                 <Route path="/Team" element={<Team/>}/>
-                <Route path="/MyReservation" element={<MyReservation/>}/>
+                <Route path="/MyReservation/:reservationId" element={<MyReservation/>}/>
             </Routes>
 
             <Footer/>
