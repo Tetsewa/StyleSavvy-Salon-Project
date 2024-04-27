@@ -1,182 +1,166 @@
-// import React, {useEffect, useState} from 'react';
-// import {DataTable} from 'primereact/datatable';
-// import {Column} from 'primereact/column';
-// import {InputText} from 'primereact/inputtext';
-// import {InputNumber} from 'primereact/inputnumber';
-// import {Dropdown} from 'primereact/dropdown';
-// import {Tag} from 'primereact/tag';
-// import {ProductService} from '/src/components/ProductService';
-// import HomeBanner from "../components/HomeBanner";
-// //import axios from "axios";
-// //const API_URL = "https://stylesavvy.adaptable.app/"
-
-// const MyReservation = () => {
-//     const [products, setProducts] = useState(null);
-//     const [statuses] = useState(['INSTOCK', 'LOWSTOCK', 'OUTOFSTOCK']);
-
-//     useEffect(() => {
-//         ProductService.getProductsMini().then((data) => setProducts(data));
-//     }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-//     const getSeverity = (value) => {
-//         switch (value) {
-//             case 'INSTOCK':
-//                 return 'success';
-
-//             case 'LOWSTOCK':
-//                 return 'warning';
-
-//             case 'OUTOFSTOCK':
-//                 return 'danger';
-
-//             default:
-//                 return null;
-//         }
-//     };
-
-//     const onRowEditComplete = (e) => {
-//         let _products = [...products];
-//         let {newData, index} = e;
-
-//         _products[index] = newData;
-
-//         setProducts(_products);
-//     };
-
-//     const textEditor = (options) => {
-//         return <InputText type="text" value={options.value} onChange={(e) => options.editorCallback(e.target.value)}/>;
-//     };
-
-//     const statusEditor = (options) => {
-//         return (
-//             <Dropdown
-//                 value={options.value}
-//                 options={statuses}
-//                 onChange={(e) => options.editorCallback(e.value)}
-//                 placeholder="Select a Status"
-//                 itemTemplate={(option) => {
-//                     return <Tag value={option} severity={getSeverity(option)}></Tag>;
-//                 }}
-//             />
-//         );
-//     };
-
-//     const priceEditor = (options) => {
-//         return <InputNumber value={options.value} onValueChange={(e) => options.editorCallback(e.value)} mode="currency"
-//                             currency="USD" locale="en-US"/>;
-//     };
-
-//     const statusBodyTemplate = (rowData) => {
-//         return <Tag value={rowData.inventoryStatus} severity={getSeverity(rowData.inventoryStatus)}></Tag>;
-//     };
-
-//     const priceBodyTemplate = (rowData) => {
-//         return new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(rowData.price);
-//     };
-
-//     const allowEdit = (rowData) => {
-//         return rowData.name !== 'Blue Band';
-//     };
-
-//     return (
-
-//         <div>
-//             <HomeBanner/>
-
-//             <form style={{width: '80%'}}>
-
-//                 <h2>Finalise your booking!</h2>
-//                 <div className="control-row">
-//                     <div className="control">
-//                         <label htmlFor="first-name">First Name</label>
-//                         <input type="text" id="first-name" name="first-name"/>
-//                     </div>
-
-//                     <div className="control">
-//                         <label htmlFor="last-name">Last Name</label>
-//                         <input type="text" id="last-name" name="last-name"/>
-//                     </div>
-//                 </div>
-
-//                 <div className="control">
-//                     <label htmlFor="email">Email</label>
-//                     <input id="email" type="email" name="email"/>
-//                 </div>
-
-//                 <div className="control">
-//                     <label htmlFor="contact-number">Contact Number</label>
-//                     <input type="text" id="contact-number" name="contact-number"/>
-//                 </div>
-
-//                 <hr/>
-//                 <div className="card p-fluid">
-//                     <DataTable value={products} editMode="row" dataKey="id" onRowEditComplete={onRowEditComplete}
-//                                tableStyle={{minWidth: '50rem'}}>
-//                         <Column field="code" header="Services" editor={(options) => textEditor(options)}
-//                                 style={{width: '20%'}}></Column>
-//                         <Column field="name" header="Name" editor={(options) => textEditor(options)}
-//                                 style={{width: '20%'}}></Column>
-//                         <Column field="inventoryStatus" header="Status" body={statusBodyTemplate}
-//                                 editor={(options) => statusEditor(options)} style={{width: '20%'}}></Column>
-//                         <Column field="price" header="Price" body={priceBodyTemplate}
-//                                 editor={(options) => priceEditor(options)} style={{width: '20%'}}></Column>
-//                         <Column rowEditor={allowEdit} headerStyle={{width: '10%', minWidth: '8rem'}}
-//                                 bodyStyle={{textAlign: 'center'}}></Column>
-//                     </DataTable>
-//                 </div>
-//                 <hr/>
-//                 <p className="form-actions">
-//                     <button type="submit" className="button">
-//                         Submit!                    </button>
-//                 </p>
-//             </form>
-
-//         </div>
-//     );
-// }
-
-// export default MyReservation
-
-import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import HomeBanner from "../components/HomeBanner";
+import {useParams} from "react-router-dom";
+import {v4 as uuidv4} from "uuid";
+import axios from "axios";
 
 const MyReservation = () => {
-  //   const location = useLocation();
-  //   const queryParams = new URLSearchParams(location.search);
-  //   const id = queryParams.get("id");
+    const {reservationId} = useParams();
 
-  const { reservationId } = useParams();
+    const [userData, setUserData] = useState(null);
 
-  const [userData, setUserData] = useState(null);
+    const [services, setServices] = useState(null);
+    const columnsToShow = ['serviceName', 'price'];
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    // Fetch user details using the userId
-    // Example fetch call
-    fetch(`https://stylesavvy.adaptable.app/reservations/${reservationId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setUserData(data);
-        console.log(data)
-      })
-      .catch((error) => console.error("Error fetching user data:", error));
-  }, [reservationId]);
+    const formatDate = (dateTimeString) => {
+        const dateObject = new Date(dateTimeString);
+        const day = dateObject.getDate().toString().padStart(2, '0'); // Get the day and pad with leading zero if necessary
+        const month = (dateObject.getMonth() + 1).toString().padStart(2, '0'); // Get the month (zero-based index) and pad with leading zero if necessary
+        const year = dateObject.getFullYear(); // Get the full year
+        console.log(year);
+        return `${year}-${month}-${day}`;
+    };
 
-  return (
-    <div>
-      <h2>My Reservation</h2>
-      {userData && (
+    const [formData, setFormData] = useState({
+        // Initialize form fields here
+        id: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        contactNumber: '',
+        dateScheduled: '',
+        timeScheduled: ''
+    });
+
+    const TableFromJSON = ({ data, columns }) => {
+        return (
+            <table>
+                <thead>
+                <tr>
+                    {columns.map((column, index) => (
+                        <th key={index}>{column}</th>
+                    ))}
+                </tr>
+                </thead>
+                <tbody>
+                {data.map((item, index) => (
+                    <tr key={index}>
+                        {columns.map((column, innerIndex) => (
+                            <td key={innerIndex}>{item[column]}</td>
+                        ))}
+                    </tr>
+                ))}
+                </tbody>
+            </table>
+        );
+    };
+
+
+    useEffect(() => {
+        // Fetch user details using the userId
+
+        fetch(`https://stylesavvy.adaptable.app/reservations/${reservationId}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setUserData(data);
+            })
+            .catch((error) => console.error("Error fetching user data:", error));
+    }, [reservationId]);
+
+    // Function to handle form input changes
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+
+    const handleDiscard = async (e) => {
+        e.preventDefault();
+        axios.delete(`https://stylesavvy.adaptable.app/reservations/${reservationId}`)
+            .then(response => {
+                console.log('Record deleted successfully');
+                // redirect to My reservation page
+                navigate(`/MakeAnAppointment`);
+            })
+            .catch(error => {
+                console.error('Error deleting record:', error);
+            });
+    };
+
+    const handleUpdateRecord = () => {
+        // Replace 'your-api-endpoint' with your actual API endpoint
+        axios.put(`https://stylesavvy.adaptable.app/reservations/${reservationId}`, formData)
+            .then(response => {
+                console.log('Record updated successfully');
+                navigate(`/MakeAnAppointment`);
+            })
+            .catch(error => {
+                console.error('Error updating record:', error);
+            });
+    };
+
+
+    return (
+
         <div>
-          <p>First Name: {userData.firstName}</p>
-          <p>Last Name: {userData.lastName}</p>
-          <p>Email: {userData.email}</p>
-          <p>Contact Number: {userData.contactNumber}</p>
-          <p>Date: {userData.dateScheduled}</p>
-          <p>Time: {userData.timeScheduled}</p>
-         
-        </div>
-      )}
-    </div>
-  );
-};
+            <HomeBanner/>
 
-export default MyReservation;
+            {userData && (
+
+                <form style={{width: '80%'}}>
+
+                    <h2>Finalise! your booking verify details below</h2>
+                    <div className="control-row">
+                        <div className="control">
+                            <label htmlFor="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" value={userData.firstName} onChange={handleChange}/>
+                        </div>
+
+                        <div className="control">
+                            <label htmlFor="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" value={userData.lastName} onChange={handleChange}/>
+                        </div>
+                    </div>
+
+                    <div className="control">
+                        <label htmlFor="email">Email</label>
+                        <input id="email" type="email" name="email" value={userData.email} onChange={handleChange}/>
+                    </div>
+
+                    <div className="control">
+                        <label htmlFor="contact-number">Contact Number</label>
+                        <input type="text" id="contact-number" name="contact-number" value={userData.contactNumber} onChange={handleChange}/>
+                    </div>
+
+                    <div className="control">
+                        <label htmlFor="date">Scheduled Date</label>
+                        <input type="date" id="scheduled-date" name="date" value={formatDate(userData.dateScheduled)} onChange={handleChange}/>
+                    </div>
+
+                    <div className="control">
+                        <label htmlFor="time">Scheduled Time</label>
+                        <input type="time" id="scheduled-time" name="scheduled-time" value={userData.timeScheduled.split('T')[1].split('.')[0]} onChange={handleChange}/>
+                    </div>
+                    <TableFromJSON data={userData.services} columns={columnsToShow} />
+                    <hr/>
+                    <p className="form-actions">
+                        <button className="button" onClick={handleDiscard}>
+                            Discard details
+                        </button>
+                        <button type="submit" className="button" onSubmit={handleUpdateRecord}>
+                            Book Now!
+                        </button>
+                    </p>
+                </form>
+            )}
+
+        </div>
+    );
+}
+
+export default MyReservation
