@@ -32,6 +32,7 @@ module.exports = {
       xl: "20px",
       mini: "15px",
       inherit: "inherit",
+      xxl: "100px",
     },
   },
   corePlugins: {
