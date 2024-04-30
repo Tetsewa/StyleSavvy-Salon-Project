@@ -11,7 +11,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(#d0d6d9, #ba71a2);
   min-height: 100vh;
-  /*color: #b6bbc1;*/
 }
 *,
 ::before,
@@ -19,21 +18,9 @@ body {
   border-width: 0;
 }
 
-
-
 * {
   box-sizing: border-box;
 }
-
-/*body {*/
-/*  margin: 0;*/
-/*  font-family: 'Lato', serif;*/
-/*  -webkit-font-smoothing: antialiased;*/
-/*  -moz-osx-font-smoothing: grayscale;*/
-/*  background: linear-gradient(#d0d6d9, #b1b4ba);*/
-/*  color: #d9e2f1;*/
-/*  min-height: 100vh;*/
-/*}*/
 
 header {
   margin: 2rem 0;
@@ -59,13 +46,13 @@ header h1 {
 }
 
 form {
-  width: 90%;
-  max-width: 40rem;
-  margin: 3rem auto;
-  padding: 2rem;
+  width: 100%;
+  max-width: 65rem;
+  margin: 5rem auto;
+  padding: 3rem;
   background: linear-gradient(180deg, #766583, #654975);
   border-radius: 8px;
-  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 16px 1px rgb(188, 112, 164);
 }
 
 .control,
@@ -178,4 +165,11 @@ fieldset {
 .button-flat:focus {
   background-color: transparent;
   color: #869999;
+}
+
+.card {
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
