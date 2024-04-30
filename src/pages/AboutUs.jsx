@@ -6,11 +6,10 @@ function About() {
     return (
         <div >
             <HomeBanner/>
-            <div className="tracking-[0.02em] capitalize  w-[267px] h-9 m-5">
-                Home/About Us
-            </div>
+            <section className='w-2/3 mx-auto'> 
+           
             <div className="inline-block w-[927px] h-[702px] [text-shadow:1px_0_0_rgba(0,_0,_0,_0),_0_1px_0_rgba(0,_0,_0,_0),_-1px_0_0_rgba(0,_0,_0,_0),_0_-1px_0_rgba(0,_0,_0,_0)] text-base m-5 text-justify">
-                <p className="m-0 text-[30px] font-alex-brush">
+                <p className="text-center m-0 text-[30px] font-alex-brush">
                     <b>{`About StyleSavvy `}</b>
                 </p>
                 <p >
@@ -117,6 +116,7 @@ function About() {
                     </span>
                 </p>
             </div>
+            </section>
         </div>
 
     )
