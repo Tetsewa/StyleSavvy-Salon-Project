@@ -110,7 +110,7 @@ const MyReservation = () => {
                     <hr/>
                     <p className="form-actions">
                         <button className="button" onClick={handleDiscard}>Discard details</button>
-                        <button className="button" onClick={handleUpdateRecord}>Book Now!</button>
+                        <button className="button" onClick={handleUpdateRecord}>Confirm!</button>
                     </p>
                 </form>
             )}

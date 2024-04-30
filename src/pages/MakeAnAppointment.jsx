@@ -257,7 +257,7 @@ const MakeAnAppointment = () => {
                         Reset
                     </button>
                     <button type="submit" className="button">
-                        Confirm!
+                        Book Now!
                     </button>
                 </p>
             </form>
