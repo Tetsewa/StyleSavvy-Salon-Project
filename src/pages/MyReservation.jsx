@@ -23,6 +23,8 @@ const MyReservation = () => {
     const handleClosePopup = () => {
         // Close the popup
         setShowPopup(false);
+        navigate(`/`);
+
       };
     const TableFromJSON = ({ data, columns }) => {
         return (
