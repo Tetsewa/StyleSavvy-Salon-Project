@@ -16,7 +16,8 @@ const MyReservation = () => {
         email: '',
         contactNumber: '',
         dateScheduled: '',
-        timeScheduled: ''
+        timeScheduled: '', 
+        services: []
     });
     const [showPopup, setShowPopup] = useState(false);
     const handleClosePopup = () => {
@@ -56,8 +57,11 @@ const MyReservation = () => {
                     lastName: data.lastName,
                     email: data.email,
                     contactNumber: data.contactNumber,
-                    dateScheduled: formatDate(data.dateScheduled),
-                    timeScheduled: data.timeScheduled.split('T')[1].split('.')[0]
+                    //dateScheduled: formatDate(data.dateScheduled),
+                    dateScheduled: data.dateScheduled,
+                    timeScheduled: data.timeScheduled.split('T')[1].split('.')[0],
+                    //timeScheduled: data.timeScheduled.split('T')[1].split('.')[0], 
+                    services: data.services
                 });
             })
             .catch(error => console.error("Error fetching user data:", error));
@@ -99,8 +103,7 @@ const MyReservation = () => {
                 // Show the popup after successful form submission
                 setShowPopup(true);
                 
-                
-        //  navigate(`/`);
+            //navigate(`/`);
     })
 
             .catch(error => {
@@ -141,7 +144,7 @@ const MyReservation = () => {
                         <input type="time" id="scheduled-time" name="timeScheduled" value={formData.timeScheduled} onChange={handleChange}/>
                     </div>
                     <hr/>
-                    <TableFromJSON data={userData.services} columns={columnsToShow} />
+                    <TableFromJSON data={formData.services} columns={columnsToShow} />
 
                     <p className="form-actions">
                         <button className="button" onClick={handleDiscard}>Discard details</button>
