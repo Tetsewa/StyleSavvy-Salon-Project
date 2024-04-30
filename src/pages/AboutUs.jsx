@@ -9,7 +9,7 @@ function About() {
             <div className="tracking-[0.02em] text-center uppercase h-9 m-5">
                 Home/About Us
             </div>
-         <section className='w-1/2 mx-auto'> 
+         <section className='w-2/3 mx-auto'> 
             <div className="inline-block px-10  [text-shadow:1px_0_0_rgba(0,_0,_0,_0),_0_1px_0_rgba(0,_0,_0,_0),_-1px_0_0_rgba(0,_0,_0,_0),_0_-1px_0_rgba(0,_0,_0,_0)] text-base m-5 text-justify">
                 <p className="m-0 text-[30px] font-alex-brush">
                     <b>{`About StyleSavvy `}</b>

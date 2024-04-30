@@ -3,14 +3,14 @@ import HomeBanner from '../components/HomeBanner';
 
 const Home = () => {
   return (
-      <div className="w-full relative bg-white  overflow-hidden text-left text-mini text-black font-fira-sans">
+      <div className="w-full bg-white overflow-hidden text-justify font-fira-sans">
         <HomeBanner />
-        <div className="capitalize font-alex-brush text-transparent !bg-clip-text [background:linear-gradient(#AD5133,_#AD5133),_#000] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] inline-block w-[796px] h-[58px]">
-          What Customers Say About Us
+        <div className="capitalize font-alex-brush text-thirdcolor text-center">
+          <h1>What Customers Say About Us</h1>
         </div>
 
-        <div className="space-x-10">
-          <div className="tracking-[0.02em] inline-block w-[218px] h-[186px] gap-10">
+        <div className="space-x-20 space-y-5 m-10">
+          <div className="tracking-[0.02em] inline-block w-[218px] h-[186px]">
             <img
                 className="rounded-[50%] w-[188px] h-[186px] object-cover"
                 alt=""
