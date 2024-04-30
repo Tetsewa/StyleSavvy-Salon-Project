@@ -49,10 +49,12 @@
     "vite": "^5.2.3"
   },
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "react-scripts test",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "root": true
