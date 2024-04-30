@@ -14,13 +14,13 @@ const Navbar = () => {
               width={140} height={170}
           />
           <div className="flex gap-5 justify-center items-center hidden md:flex">
-            <Link to={`/`} className="text-black">Home</Link>
-            <Link to={`/AboutUs`} className="text-black">About Us</Link>
-            <Link to={`/MakeAnAppointment`} className="text-black">Make An Appointment</Link>
-            <Link to={`/Services`} className="text-black">Services/Prices</Link>
-            <Link to={`/Team`} className="text-black">Team</Link>
-            <Link to={`/MyReservation`} className="text-black">My Reservation</Link>
-
+            <Link to={`/`} className="text-black no-underline">Home</Link>
+            <Link to={`/AboutUs`} className="text-black no-underline">About Us</Link>
+            <Link to={`/MakeAnAppointment`} className="text-black no-underline">Make An Appointment</Link>
+            <Link to={`/Services`} className="text-black no-underline">Services/Prices</Link>
+            <Link to={`/Team`} className="text-black no-underline">Team</Link>
+            {/* <Link to={`/MyReservation`} className="text-black">My Reservation</Link>
+ */}
 
           </div>
 
