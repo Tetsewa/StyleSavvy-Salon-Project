@@ -22,7 +22,7 @@ const Home = () => {
               asked insightful questions about my hair texture, styling routine, and
               lifestyle to ensure that the haircut would suit me perfectly.
             </p>
-            <p className="text-xs">Rating: ⭐⭐⭐⭐"
+            <p className="text-xs">Rating: ⭐⭐⭐⭐
               
             </p>
           </div>

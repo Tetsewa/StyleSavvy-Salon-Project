@@ -9,6 +9,7 @@ const MyReservation = () => {
     const navigate = useNavigate();
 
     const [userData, setUserData] = useState(null);
+    const columnsToShow = ['serviceName', 'price'];
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -17,7 +18,34 @@ const MyReservation = () => {
         dateScheduled: '',
         timeScheduled: ''
     });
-
+    const [showPopup, setShowPopup] = useState(false);
+    const handleClosePopup = () => {
+        // Close the popup
+        setShowPopup(false);
+      };
+    const TableFromJSON = ({ data, columns }) => {
+        return (
+            <table>
+                <thead>
+                <tr>
+                    {columns.map((column, index) => (
+                        <th key={index}>{column}</th>
+                    ))}
+                </tr>
+                </thead>
+                <tbody>
+                {data.map((item, index) => (
+                    <tr key={index}>
+                        {columns.map((column, innerIndex) => (
+                            <td key={innerIndex}>{item[column]}</td>
+                        ))}
+                    </tr>
+                ))}
+                </tbody>
+            </table>
+        );
+    };
+// Fetch user details using the userId
     useEffect(() => {
         fetch(`https://stylesavvy.adaptable.app/reservations/${reservationId}`)
             .then(response => response.json())
@@ -42,7 +70,7 @@ const MyReservation = () => {
         const year = dateObject.getFullYear();
         return `${year}-${month}-${day}`;
     };
-
+ // Function to handle form input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -68,8 +96,13 @@ const MyReservation = () => {
         axios.put(`https://stylesavvy.adaptable.app/reservations/${reservationId}`, formData)
             .then(response => {
                 console.log('Record updated successfully');
-                navigate(`/MakeAnAppointment`);
-            })
+                // Show the popup after successful form submission
+                setShowPopup(true);
+                
+                
+        //  navigate(`/`);
+    })
+
             .catch(error => {
                 console.error('Error updating record:', error);
             });
@@ -108,12 +141,27 @@ const MyReservation = () => {
                         <input type="time" id="scheduled-time" name="timeScheduled" value={formData.timeScheduled} onChange={handleChange}/>
                     </div>
                     <hr/>
+                    <TableFromJSON data={userData.services} columns={columnsToShow} />
+
                     <p className="form-actions">
                         <button className="button" onClick={handleDiscard}>Discard details</button>
                         <button className="button" onClick={handleUpdateRecord}>Confirm!</button>
                     </p>
                 </form>
             )}
+            {showPopup && (
+                
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-8 rounded-lg">
+                        <h2 className="text-xl font-semibold mb-4">Success!</h2>
+                        <p>Congratulations! Your appointment got confirmed 🎉.</p>
+                        <button onClick={handleClosePopup} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+                            Close
+                        </button>
+                    </div>
+                </div>
+             ) }
+            
         </div>
     );
 }
