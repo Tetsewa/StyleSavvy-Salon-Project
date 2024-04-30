@@ -19,6 +19,19 @@ const MyReservation = () => {
         timeScheduled: '', 
         services: []
     });
+
+    const [total, setTotal] = useState(0);
+    useEffect(() => {
+        if (formData.services.length > 0) {
+            const totalAmount = formData.services.reduce((accumulator, currentValue) => {
+                const price = parseFloat(currentValue.price); // Convert price to a float
+                return accumulator + (isNaN(price) ? 0 : price); // Add price to accumulator if it's a valid number
+            }, 0);
+            setTotal(totalAmount.toFixed(2)); // Fixing the total amount to 2 decimal places
+        }
+    }, [formData.services]);
+
+
     const [showPopup, setShowPopup] = useState(false);
     const handleClosePopup = () => {
         // Close the popup
@@ -147,7 +160,7 @@ const MyReservation = () => {
                     </div>
                     <hr/>
                     <TableFromJSON data={formData.services} columns={columnsToShow} />
-
+                    <p>Total: €{total}</p>
                     <p className="form-actions">
                         <button className="button" onClick={handleDiscard}>Discard details</button>
                         <button className="button" onClick={handleUpdateRecord}>Confirm!</button>
