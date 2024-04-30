@@ -57,8 +57,8 @@ const MyReservation = () => {
                     lastName: data.lastName,
                     email: data.email,
                     contactNumber: data.contactNumber,
-                    //dateScheduled: formatDate(data.dateScheduled),
-                    dateScheduled: data.dateScheduled,
+                    dateScheduled: formatDate(data.dateScheduled),
+                    //dateScheduled: data.dateScheduled,
                     timeScheduled: data.timeScheduled.split('T')[1].split('.')[0],
                     //timeScheduled: data.timeScheduled.split('T')[1].split('.')[0], 
                     services: data.services
