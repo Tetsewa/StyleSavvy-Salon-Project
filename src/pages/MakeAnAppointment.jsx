@@ -1,39 +1,122 @@
-import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import HomeBanner from '../components/HomeBanner';
-//import { DayPicker } from 'react-day-picker'
+import axios from 'axios';
+import {v4 as uuidv4} from 'uuid';
+
 
 const MakeAnAppointment = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [startTime, setStartTime] = useState(new Date());
-    const [selectedService, setSelectedService] = useState('');
-    const handleServiceChange = (e) => {
-        setSelectedService(e.target.value);
-    };
+    const navigate = useNavigate();
 
-    // Step 1: Setup State for Form Data
+    const [selectedOptionHairServices, setSelectedOptionHairServices] = useState('');
+    const [selectedOptionSkinServices, setSelectedOptionSkinServices] = useState('');
+    const [selectedOptionNailServices, setSelectedOptionNailServices] = useState('');
+    const [selectedOptionSpaServices, setSelectedOptionSpaServices] = useState('');
+
     const [formData, setFormData] = useState({
+        // Initialize form fields here
+        id: '',
         firstName: '',
         lastName: '',
-        phoneNumber: '',
-        email: ''
+        email: '',
+        contactNumber: '',
+        dateScheduled: '',
+        timeScheduled: '',
+        services: []
     });
 
-    // Step 2: Handle Input Changes
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
+        const {name, value} = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+    const handleSelectChangeHairServices = (event) => {
+            setSelectedOptionHairServices(getValueById(event.target.value));
     };
 
-    // Step 3: Handle Form Submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Process the form data, e.g., send it to a backend server
+    const handleSelectChangeSkinServices = (event) => {
+        setSelectedOptionSkinServices(getValueById(event.target.value));
+    };
+
+    const handleSelectChangeSpaServices = (event) => {
+        setSelectedOptionSpaServices(getValueById(event.target.value));
+    };
+
+    const handleSelectChangeNailServices = (event) => {
+        setSelectedOptionNailServices(getValueById(event.target.value));
+    };
+
+    const handleSubmit = async (e) => {
         console.log(formData);
+        formData.id = uuidv4();
+        formData.dateScheduled = startDate;
+        formData.timeScheduled = startTime;
+        if (selectedOptionHairServices!==null && selectedOptionHairServices !=='') {
+            formData.services.push(selectedOptionHairServices);
+        }
+        if (selectedOptionSkinServices != null && selectedOptionSkinServices !== '') {
+            formData.services.push(selectedOptionSkinServices);
+        }
+        if (selectedOptionNailServices != null && selectedOptionNailServices !== '') {
+            formData.services.push(selectedOptionNailServices);
+        }
+        if (selectedOptionSpaServices != null && selectedOptionSpaServices !== '') {
+            formData.services.push(selectedOptionSpaServices);
+        }
+        e.preventDefault();
+        try {
+            const response = await axios.post('https://stylesavvy.adaptable.app/reservations', formData);
+            console.log('Response:', response.data);
+            // redirect to My reservation page
+            navigate(`/MyReservation/${response.data.id}`);
+
+
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+
+    // Load the picklist mapping services
+
+    const [dataMap, setDataMap] = useState(new Map());
+
+    useEffect(() => {
+        // Simulate fetching JSON data (replace with actual fetch call)
+        const fetchData = async () => {
+            try {
+                const response = await fetch('https://json-api.adaptable.app/services'); // Replace 'example.json' with your JSON file or API endpoint
+                const jsonData = await response.json();
+
+                // Convert JSON object to Map
+                const mapData = jsonToMap(jsonData);
+                setDataMap(mapData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []); // Empty dependency array to ensure useEffect runs only once
+
+    // Function to convert JSON object to Map with "id" field as keys
+    const jsonToMap = (json) => {
+        const map = new Map();
+        json.forEach(item => {
+            map.set(item.id, item);
+        });
+        return map;
+    };
+
+    // Function to get value from Map using "id"
+    const getValueById = (id) => {
+        return dataMap.get(id);
     };
 
     return (
@@ -42,55 +125,43 @@ const MakeAnAppointment = () => {
 
             {/*<h1 className="text-3xl font-bold ">Make An Appointment</h1>*/}
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2>Make an appointment!</h2>
                 <p>We just need a little bit of data from you to get you started 🚀</p>
 
                 <div className="control-row">
                     <div className="control">
                         <label htmlFor="first-name">First Name</label>
-                        <input type="text" id="first-name" name="first-name"/>
+                        <input type="text" id="first-name" name="firstName" value={formData.firstName}
+                               onChange={handleChange}/>
                     </div>
 
                     <div className="control">
                         <label htmlFor="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name"/>
+                        <input type="text" id="last-name" name="lastName" value={formData.lastName}
+                               onChange={handleChange}/>
                     </div>
                 </div>
 
                 <div className="control">
                     <label htmlFor="email">Email</label>
-                    <input id="email" type="email" name="email"/>
+                    <input id="email" type="email" name="email" value={formData.email}
+                           onChange={handleChange}/>
                 </div>
 
                 <div className="control">
                     <label htmlFor="contact-number">Contact Number</label>
-                    <input type="text" id="contact-number" name="contact-number"/>
+                    <input type="text" id="contact-number" name="contactNumber" value={formData.contactNumber}
+                           onChange={handleChange}/>
                 </div>
-
-
-                {/*<div className="control-row">*/}
-                {/*    <div className="control">*/}
-                {/*        <label htmlFor="password">Password</label>*/}
-                {/*        <input id="password" type="password" name="password"/>*/}
-                {/*    </div>*/}
-
-                {/*    <div className="control">*/}
-                {/*        <label htmlFor="confirm-password">Confirm Password</label>*/}
-                {/*        <input*/}
-                {/*            id="confirm-password"*/}
-                {/*            type="password"*/}
-                {/*            name="confirm-password"*/}
-                {/*        />*/}
-                {/*    </div>*/}
-                {/*</div>*/}
 
                 <hr/>
                 <div className="control-row">
                     {/*Hair services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Hair Services</label>
-                        <select id="hair-services" name="hair-services">
+                        <select id="hair-services" name="hair-services" onChange={handleSelectChangeHairServices}>
+                            <option value="">Select....</option>
                             <option value="men-hair-cut-35">Men's Haircut - €35.00</option>
                             <option value="women-hair-cut-40">Women's Haircut - €40.00</option>
                             <option value="kids-hair-cut-30">Kids Haircut - €30.00</option>
@@ -99,7 +170,7 @@ const MakeAnAppointment = () => {
                             <option value="deep-codn-treat-50">Deep Conditioning Treatment - €50.00</option>
                             <option value="keratin-treat-80">Keratin Treatment - €80.00</option>
                             <option value="scalp-treat-60">Scalp Treatment - €60.00</option>
-                            <option value="bidal-hair-50">Bridal Hair(Including trial) - €50.00</option>
+                            <option value="bridal-hair-50">Bridal Hair(Including trial) - €50.00</option>
                         </select>
                     </div>
 
@@ -107,9 +178,10 @@ const MakeAnAppointment = () => {
                     {/*Nail services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Nail Services</label>
-                        <select id="Nail-services" name="Nail-services">
+                        <select id="nail-services" name="nail-services" onChange={handleSelectChangeNailServices}>
+                            <option value="">Select....</option>
                             <option value="classic-manicure-50">Classic Manicure - €35.00</option>
-                            <option value="gel-manicure-30">Gel Manicure- €40.00</option>
+                            <option value="gel-manicure-40">Gel Manicure- €40.00</option>
                             <option value="classic-pedicure-25">Classic Pedicure- €25.00</option>
                             <option value="spa-pedicure-30">Spa Pedicure - €30.00</option>
                             <option value="basic-nail-art-50">Basic Nail Art- €50.00</option>
@@ -121,7 +193,8 @@ const MakeAnAppointment = () => {
                     {/*Skin services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Skin Services</label>
-                        <select id="Skin-services" name="Skin-services">
+                        <select id="skin-services" name="skin-services" onChange={handleSelectChangeSkinServices}>
+                            <option value="">Select....</option>
                             <option value="express-facial-50">Express Facial - €50.00</option>
                             <option value="signature-facial-35">Signature Facial - €35.00</option>
                             <option value="hydrating-facial-25">Hydrating Facial - €25.00</option>
@@ -136,12 +209,18 @@ const MakeAnAppointment = () => {
                     {/*Spa services dropdown list*/}
                     <div className="control">
                         <label htmlFor="phone">Spa Services</label>
-                        <select id="spa-services" name="spa-services">
-                            <option value="relaxation-package-150">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>
-                            <option value="pamperme-package-200">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>
+
+                        <select id="spa-services" name="spa-services" onChange={handleSelectChangeSpaServices}>
+                            <option value="">Select....</option>
+                            <option value="relaxation-package-150">Relaxation Package(Includes Massage,Facial,Manicure)
+                                - €150.00
+                            </option>
+                            <option value="pamperme-package-200">Pamper Me Package ( Includes Pedicure , Scalp
+                                treatment,
+                                MakeUp) - €200.00
+                            </option>
                         </select>
                     </div>
-
                 </div>
 
                 <div className="control-row">
@@ -166,35 +245,6 @@ const MakeAnAppointment = () => {
                     </div>
 
                 </div>
-
-                {/*<fieldset>*/}
-                {/*    <legend>How did you find us?</legend>*/}
-                {/*    <div className="control">*/}
-                {/*        <input*/}
-                {/*            type="checkbox"*/}
-                {/*            id="google"*/}
-                {/*            name="acquisition"*/}
-                {/*            value="google"*/}
-                {/*        />*/}
-                {/*        <label htmlFor="google">Google</label>*/}
-                {/*    </div>*/}
-
-                {/*    <div className="control">*/}
-                {/*        <input*/}
-                {/*            type="checkbox"*/}
-                {/*            id="friend"*/}
-                {/*            name="acquisition"*/}
-                {/*            value="friend"*/}
-                {/*        />*/}
-                {/*        <label htmlFor="friend">Referred by friend</label>*/}
-                {/*    </div>*/}
-
-                {/*    <div className="control">*/}
-                {/*        <input type="checkbox" id="other" name="acquisition" value="other"/>*/}
-                {/*        <label htmlFor="other">Other</label>*/}
-                {/*    </div>*/}
-                {/*</fieldset>*/}
-
                 <div className="control">
                     <label htmlFor="terms-and-conditions">
                         <input type="checkbox" id="terms-and-conditions" name="terms"/>I
@@ -207,146 +257,10 @@ const MakeAnAppointment = () => {
                         Reset
                     </button>
                     <button type="submit" className="button">
-                        Book Now
+                        Book Now!
                     </button>
                 </p>
             </form>
-            {/* <h1>Hair Services</h1> */}
-
-            {/*      <form onSubmit={handleSubmit}>*/}
-            {/*          /!* First Name *!/*/}
-            {/*          <div>*/}
-            {/*              <label>First Name:</label>*/}
-            {/*              <input className="mt-5"*/}
-            {/*                     type="text"*/}
-            {/*                     name="firstName"*/}
-            {/*                     value={formData.firstName}*/}
-            {/*                     onChange={handleChange}*/}
-            {/*                     required*/}
-            {/*              />*/}
-            {/*          </div>*/}
-            {/*          <br></br>*/}
-            {/*          /!* Last Name *!/*/}
-            {/*          <div>*/}
-            {/*              <label>Last Name:</label>*/}
-            {/*              <input*/}
-            {/*                  type="text"*/}
-            {/*                  name="lastName"*/}
-            {/*                  value={formData.lastName}*/}
-            {/*                  onChange={handleChange}*/}
-            {/*                  required*/}
-            {/*              />*/}
-            {/*          </div>*/}
-            {/*          <br></br>*/}
-            {/*          /!* Phone Number *!/*/}
-            {/*          <div>*/}
-            {/*              <label>Phone/Mobile Number</label>*/}
-            {/*              <input*/}
-            {/*                  type="tel"*/}
-            {/*                  name="phoneNumber"*/}
-            {/*                  value={formData.phoneNumber}*/}
-            {/*                  onChange={handleChange}*/}
-            {/*                  required*/}
-            {/*              />*/}
-            {/*          </div>*/}
-            {/*          <br></br>*/}
-            {/*          /!* Email *!/*/}
-            {/*          <div>*/}
-            {/*              <label>E-mail ID:</label>*/}
-            {/*              <input className="mt-2"*/}
-            {/*                     type="email"*/}
-            {/*                     name="email"*/}
-            {/*                     value={formData.email}*/}
-            {/*                     onChange={handleChange}*/}
-            {/*                     required/>*/}
-            {/*          </div>*/}
-            {/*          <span className=" justify-between px-3">*/}
-
-            {/*          <select value={selectedService} onChange={handleServiceChange}*/}
-            {/*                  className="px-4 py-2 border rounded-md">*/}
-            {/*             <option value="">Hair Services</option>*/}
-
-            {/*     <option value="Haircut">Men's Haircut - €35.00</option>*/}
-            {/*     <option value="Hair Coloring">Women's Haircut - €40.00</option>*/}
-            {/*     <option value="Hair Styling"> Kids Haircut - €30.00</option>*/}
-            {/*     <option value="Hair Styling"> Blow Out - €40.00</option>*/}
-            {/*     <option value="Hair Styling"> Updo/Event Styling - €70.00</option>*/}
-            {/*     <option value="Hair Styling"> Deep Conditioning Treatment - €50.00</option>*/}
-            {/*     <option value="Hair Styling"> Keratin Treatment - €80.00</option>*/}
-            {/*     <option value="Scalp Treatment">Scalp Treatment - €60.00 </option>*/}
-            {/*     <option value="Bridal Hair"> Bridal Hair(Including trial) - €50.00 </option>*/}
-
-
-
-            {/*</select>*/}
-            {/*              /!* Display selected service *!/*/}
-            {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
-            {/*          <span className=" justify-between px-3"><select value={selectedService} onChange={handleServiceChange}*/}
-            {/*                                                          className="px-4 py-2 border rounded-md">*/}
-            {/*             <option value="">Nail Services</option>*/}
-
-            {/*     <option value="Classic manicure">Classic Manicure - €50.00</option>*/}
-            {/*     <option value="Gel manicure">Gel manicure - €30.00</option>*/}
-            {/*     <option value="Classic Pedicure"> Classic Pedicure - €25.00</option>*/}
-            {/*     <option value="Spa Pedicure"> Spa Pedicure - €30.00</option>*/}
-            {/*     <option value="Basic Nail Art"> Basic Nail Art(per Nail) - €50.00</option>*/}
-            {/*     <option value="Intricate Nail Art"> Intricate Nail Art(Per nail) - €70.00</option>*/}
-
-            {/*  </select>*/}
-            {/*              /!* Display selected service *!/*/}
-            {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
-            {/*          <span className="  "><select value={selectedService} onChange={handleServiceChange}*/}
-            {/*                                       className="px-4 py-2 border rounded-md">*/}
-            {/*             <option value="">Skin Services</option>*/}
-
-            {/*     <option value="Exppress Facial">Express Facial - €50.00</option>*/}
-            {/*     <option value="Signature Facial">Signature Facial - €35.00</option>*/}
-            {/*     <option value="Hydrating Facial"> Hydrating Facial - €25.00</option>*/}
-            {/*     <option value="Eyebrow Wax"> Eyebrow Wax - €35.00</option>*/}
-            {/*     <option value="Lip Wax"> Lip Wax - €20.00</option>*/}
-            {/*     <option value="Full Face Wax"> Full Face Wax - €50.00</option>*/}
-            {/*     <option value="Brazilian Wax"> Brazilian Wax - €80.00</option>*/}
-
-            {/*  </select>*/}
-            {/*              /!* Display selected service *!/*/}
-            {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
-            {/*          <span><select value={selectedService} onChange={handleServiceChange}*/}
-            {/*                        className="px-4 py-2 border rounded-md">*/}
-            {/*             <option value="">Spa Services</option>*/}
-
-            {/*     <option*/}
-            {/*         value="Relaxation Package">Relaxation Package ( Includes Massage, Facial , Manicure ) - €150.00</option>*/}
-            {/*     <option*/}
-            {/*         value="Pamper Me Package ">Pamper Me Package ( Includes Pedicure , Scalp teatment, MakeUp) - €200.00</option>*/}
-
-
-            {/*  </select>*/}
-            {/*              /!* Display selected service *!/*/}
-            {/*              {selectedService && <p>You selected: {selectedService}</p>}</span>*/}
-
-            {/*          <br></br>*/}
-            {/*          <div classname="flex">*/}
-
-            {/*              <DatePicker className="w-2/5 float-center -mt-10"*/}
-            {/*                          selected={startDate}*/}
-            {/*                          onChange={(date) => setStartDate(date)}*/}
-            {/*                          timeInputLabel="Date:"*/}
-            {/*                          dateFormat="MM/dd/yyyy"/>*/}
-
-            {/*              <DatePicker className="w-2/5 float-center -mt-10"*/}
-            {/*                          selected={startTime}*/}
-            {/*                          onChange={(date) => setStartTime(date)}*/}
-            {/*                          showTimeSelect*/}
-            {/*                          showTimeSelectOnly*/}
-            {/*                          timeIntervals={30}*/}
-            {/*                          timeCaption="Time"*/}
-            {/*                          dateFormat="h:mm aa"/>*/}
-            {/*          </div>*/}
-            {/*          /!* Submit Button *!/*/}
-            {/*          <button type="submit"*/}
-            {/*                  className=" float-right -mt-12 justify-center bg-blue-500 text-white py-2 px-4 rounded-md"><Link*/}
-            {/*              to="/Services" className=" text-white font-bold py-2 px-4 rounded">Book Now</Link></button>*/}
-            {/*      </form>*/}
         </div>
 
     );
