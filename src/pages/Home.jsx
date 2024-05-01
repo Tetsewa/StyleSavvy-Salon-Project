@@ -5,12 +5,12 @@ const Home = () => {
   return (
       <div className="w-fullbg-white  overflow-hidden text-left text-mini text-black font-fira-sans">
         <HomeBanner />
-        <div className="capitalize font-alex-brush text-white text-center">
+        <div className="capitalize font-alex-brush text-secondcolor text-center">
           <h1>What Customers Say About Us</h1>
         </div>
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8 mt-8  p-8">
           <div className="bg-white rounded-lg p-6 shadow-md">
             <img
                 className="w-full h-48 object-cover rounded-lg mb-4"

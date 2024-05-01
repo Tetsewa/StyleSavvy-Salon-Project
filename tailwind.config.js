@@ -9,9 +9,9 @@ module.exports = {
         black: "#000",
         gainsboro: "#d9d9d9",
         firstcolor: "#ffaaaa",
-        secondcolor: "#e37070",
+        secondcolor: "#52373a",
         thirdcolor: "#c7004c",
-        fourthcolor: "#766583",
+        fourthcolor: "#ae7279",
         fifthcolor: "#a790ac"
 
       },

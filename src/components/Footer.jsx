@@ -3,7 +3,7 @@ import { SocialIcon } from 'react-social-icons';
 
 export default function Footer() {
     return (
-        <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-gray-300 p-6 md:p-8 lg:p-10">
+        <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-fourthcolor p-6 md:p-8 lg:p-10">
             <div className="p-3">
                 <h3 className="font-bold mb-3 ">Salon Opening Hours</h3>
                 <p className="mb-3 ">
