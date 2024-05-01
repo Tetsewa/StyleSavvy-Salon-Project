@@ -3,16 +3,6 @@ import HomeBanner from '../components/HomeBanner';
 
 const Home = () => {
   return (
-<<<<<<< HEAD
-      <div className="w-full bg-white overflow-hidden text-justify font-fira-sans">
-        <HomeBanner />
-        <div className="capitalize font-alex-brush text-thirdcolor text-center">
-          <h1>What Customers Say About Us</h1>
-        </div>
-
-        <div className="space-x-20 space-y-5 m-10">
-          <div className="tracking-[0.02em] inline-block w-[218px] h-[186px]">
-=======
       <div className="w-fullbg-white  overflow-hidden text-left text-mini text-black font-fira-sans">
         <HomeBanner />
         <div className="capitalize font-alex-brush text-secondcolor text-center">
@@ -22,7 +12,6 @@ const Home = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8 mt-8  p-8">
           <div className="bg-white rounded-lg p-6 shadow-md">
->>>>>>> fc4b4cfc517d96e4d40416abcc8e61c2e5f33614
             <img
                 className="w-full h-48 object-cover rounded-lg mb-4"
                 alt=""
