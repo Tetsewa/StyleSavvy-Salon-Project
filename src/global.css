@@ -9,7 +9,7 @@ body {
   font-family: "Lato", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#d0d6d9, #ba71a2);
+  background: linear-gradient(#d0d6d9, #d5b1b1);
   min-height: 100vh;
 }
 *,
@@ -50,7 +50,7 @@ form {
   max-width: 65rem;
   margin: 5rem auto;
   padding: 3rem;
-  background: linear-gradient(180deg, #766583, #654975);
+  background: linear-gradient(180deg, #f7f5f8, #f7f7f7);
   border-radius: 8px;
   box-shadow: 0 0 16px 1px rgb(188, 112, 164);
 }
@@ -80,8 +80,8 @@ fieldset {
   padding: 0.5rem;
   font-size: 1rem;
   border-radius: 4px;
-  border: 1px solid #a790ac;
-  background-color: #dddcdd;
+  border: 1px solid #d5b1b1;
+  background-color: #d5b1b1;
   color: #142020;
 }
 
@@ -93,7 +93,7 @@ fieldset {
   font-size: 1rem;
   border-radius: 4px;
   border: 1px solid #a790ac;
-  background-color: #dddcdd;
+  background-color: #d5b1b1;
   color: #142020;
 }
 
@@ -178,4 +178,5 @@ fieldset {
   background-image: url("/vecteezy_beauty-salon-interior_27819575.jpg");
   background-size: cover;
   background-position: bottom;
+
 }
