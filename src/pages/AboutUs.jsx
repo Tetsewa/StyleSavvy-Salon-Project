@@ -5,44 +5,10 @@ function About() {
     return (
         <div>
             <HomeBanner/>
-<<<<<<< HEAD
-            <div className="tracking-[0.02em] text-center uppercase h-9 m-5">
-                Home/About Us
-            </div>
-         <section className='w-2/3 mx-auto'> 
-            <div className="inline-block px-10  [text-shadow:1px_0_0_rgba(0,_0,_0,_0),_0_1px_0_rgba(0,_0,_0,_0),_-1px_0_0_rgba(0,_0,_0,_0),_0_-1px_0_rgba(0,_0,_0,_0)] text-base m-5 text-justify">
-                <p className="m-0 text-[30px] font-alex-brush">
-                    <b>{`About StyleSavvy `}</b>
-                </p>
-                <p >
-                    <span>
-                        <p>
-                            Welcome to StyleSavvy, your premier destination for expert hair
-                            care and nail services in the heart of the city. At StyleSavvy, we
-                            believe that your every part of your body can be your fashion accessory, and our
-                            mission is to help you express your unique style and personality
-                            through a beautiful, healthy body.
-                        </p>
-                    </span>
-                </p>
-                <p>
-                    <p>
-
-                        <div className="font-bold font-alex-brush">Our Story</div>
-                        <p>
-                            Founded in 2010, StyleSavvy has quickly become a trusted name in
-                            the beauty industry, known for our commitment to excellence and
-                            passion for creativity. Our founder, Sarah Lewis, envisioned
-                            a salon that would not only deliver exceptional services but
-                            also provide a welcoming and inclusive environment where clients
-                            could feel pampered and empowered.
-                        </p>
-=======
             <section className='w-2/3 mx-auto'> 
                 <div className="text-base m-5 text-justify">
                     <p className="text-center mb-5 text-xl font-alex-brush">
                         <b>About StyleSavvy</b>
->>>>>>> fc4b4cfc517d96e4d40416abcc8e61c2e5f33614
                     </p>
                     <p>
                         Welcome to StyleSavvy, your premier destination for expert hair
