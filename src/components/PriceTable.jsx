@@ -46,7 +46,7 @@ const rows4 = [
 
 export default function PriceTable() {
     return (
-        <div className ="grid grid-cols-1 md:grid-cols-2 mx-[200px]">
+        <div className ="grid grid-cols-1 md:grid-cols-2 xl:mx-[200px]">
             <div className ="max-w-2xl m-5" > 
             
             <TableContainer component={Paper} >
