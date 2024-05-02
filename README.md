@@ -1,5 +1,5 @@
 
-![Logo](https://github.com/Tetsewa/StyleSavvy-Salon-Project/blob/main/public/stylesavvy-logo-png-1%300x.png)
+![Logo](https://github.com/Tetsewa/StyleSavvy-Salon-Project/blob/main/public/stylesavvy-logo-png-1%402x.png)
 
 
 # Style-Savvy
