@@ -1,7 +1,5 @@
 
 ![Logo](https://github.com/Tetsewa/StyleSavvy-Salon-Project/blob/main/public/stylesavvy-logo-png-1%402x.png)
-
-
 # Style-Savvy
 
 Style-Savvy is an applciaiton to book reservations for expert hair care, Spa, Skin and nail services in the heart of the city. 
