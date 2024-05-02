@@ -9,7 +9,7 @@ body {
   font-family: "Lato", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#d0d6d9, #ebaaaa);
+  background: linear-gradient(#db0da436, #ebaaaa);
   min-height: 100vh;
 }
 *,
