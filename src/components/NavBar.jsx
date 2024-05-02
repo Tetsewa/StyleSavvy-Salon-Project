@@ -43,7 +43,7 @@ const Navbar = () => {
             <div className="fixed w-full top-0 bg-white p-8">
               <div className="bg-white flex flex-col items-left gap-5">
                 <Link to={`/`} className="text-black no-underline uppercase">Home</Link>
-                <Link to={`/About`} className="text-black  no-underline uppercase">About Us</Link>
+                <Link to={`/AboutUs`} className="text-black  no-underline uppercase">About Us</Link>
                 <Link to={`/MakeAnAppointment`} className="text-black  no-underline uppercase">Make An Appointment</Link>
                 <Link to={`/Services`} className="text-black  no-underline uppercase">Services/Prices</Link>
                 <Link to={`/Team`} className="text-black no-underline uppercase">Team</Link>
