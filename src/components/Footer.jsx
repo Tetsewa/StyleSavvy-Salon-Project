@@ -7,8 +7,7 @@ export default function Footer() {
             <div className="p-3">
                 <h3 className="font-bold mb-3 ">Salon Opening Hours</h3>
                 <p className="mb-3 ">
-                    Monday to Friday: 9:00 AM - 6:00 PM <br/>
-                    Saturday: 9:00 AM - 5:00 PM <br/>
+                    Monday to Saturday: 9:00 AM - 5:00 PM <br/>
                     Sunday: Closed
                 </p>
                 <p className="text-sm">
