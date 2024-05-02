@@ -17,6 +17,15 @@ const MakeAnAppointment = () => {
     const [selectedOptionNailServices, setSelectedOptionNailServices] = useState('');
     const [selectedOptionSpaServices, setSelectedOptionSpaServices] = useState('');
 
+    const isWeekday = (date) => {
+        const day = date.getDay();
+        return day !== 0; // 0 = Sunday, 6 = Saturday
+    };
+
+    const filterWeekdays = (date) => {
+        return isWeekday(date);
+    };
+
     const [formData, setFormData] = useState({
         // Initialize form fields here
         id: '',
@@ -32,12 +41,11 @@ const MakeAnAppointment = () => {
     const handleChange = (e) => {
         const {name, value} = e.target;
         setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
+            ...prevData, [name]: value,
         }));
     };
     const handleSelectChangeHairServices = (event) => {
-            setSelectedOptionHairServices(getValueById(event.target.value));
+        setSelectedOptionHairServices(getValueById(event.target.value));
     };
 
     const handleSelectChangeSkinServices = (event) => {
@@ -57,7 +65,7 @@ const MakeAnAppointment = () => {
         formData.id = uuidv4();
         formData.dateScheduled = startDate;
         formData.timeScheduled = startTime;
-        if (selectedOptionHairServices!==null && selectedOptionHairServices !=='') {
+        if (selectedOptionHairServices !== null && selectedOptionHairServices !== '') {
             formData.services.push(selectedOptionHairServices);
         }
         if (selectedOptionSkinServices != null && selectedOptionSkinServices !== '') {
@@ -119,8 +127,7 @@ const MakeAnAppointment = () => {
         return dataMap.get(id);
     };
 
-    return (
-        <div>
+    return (<div>
             <HomeBanner/>
 
             {/*<h1 className="text-3xl font-bold ">Make An Appointment</h1>*/}
@@ -230,9 +237,9 @@ const MakeAnAppointment = () => {
                         <DatePicker selected={startDate}
                                     onChange={(date) => setStartDate(date)}
                                     timeInputLabel="Date:"
-                                    dateFormat="MM/dd/yyyy"/>
+                                    dateFormat="MM/dd/yyyy"
+                                    filterDate={filterWeekdays}/>
                     </div>
-
                     <div className="control">
                         <label htmlFor="time">Select Time</label>
                         <DatePicker selected={startTime}
@@ -241,7 +248,9 @@ const MakeAnAppointment = () => {
                                     showTimeSelectOnly
                                     timeIntervals={30}
                                     timeCaption="Time"
-                                    dateFormat="h:mm aa"/>
+                                    dateFormat="h:mm aa"
+                                    minTime={new Date(0, 0, 0, 9, 0)}
+                                    maxTime={new Date(0, 0, 0, 17, 0)}/>
                     </div>
 
                 </div>
