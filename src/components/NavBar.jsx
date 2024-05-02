@@ -14,12 +14,12 @@ const Navbar = () => {
               width={140} height={170}
           />
 
-          <div className="flex gap-5 justify-center items-center hidden md:flex">
-            <Link to={`/`} className="text-black uppercase no-underline">Home</Link>
-            <Link to={`/AboutUs`} className="text-black uppercase no-underline">About Us</Link>
-            <Link to={`/MakeAnAppointment`} className="text-black uppercase no-underline">Make An Appointment</Link>
-            <Link to={`/Services`} className="text-black uppercase no-underline">Services/Prices</Link>
-            <Link to={`/Team`} className="text-black uppercase  no-underline">Team</Link>
+          <div className="flex gap-10 justify-center items-center hidden md:flex">
+            <Link to={`/`} className="xl:text-xl text-pink uppercase no-underline transform transition duration-300 hover:scale-105 hover:shadow-xl hover:text-pink-500">Home</Link>
+            <Link to={`/AboutUs`} className="xl:text-xl text-pink uppercase no-underline transform transition duration-300 hover:scale-105 hover:shadow-xl hover:text-pink-500">About Us</Link>
+            <Link to={`/MakeAnAppointment`} className="xl:text-xl text-pink uppercase no-underline transform transition duration-300 hover:scale-105 hover:shadow-xl hover:text-pink-500">Make An Appointment</Link>
+            <Link to={`/Services`} className="xl:text-xl text-pink uppercase no-underline transform transition duration-300 hover:scale-105 hover:shadow-xl hover:text-pink-500">Services/Prices</Link>
+            <Link to={`/Team`} className="xl:text-xl text-pink uppercase  no-underline transform transition duration-300 hover:scale-105 hover:shadow-xl hover:text-pink-500">Team</Link>
             {/* <Link to={`/MyReservation`} className="text-black">My Reservation</Link> */}
 
           </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
 
         {menuOpen && (
             <div >
-              <div className="flex flex-col items-center justify-center gap-10 ">
+              <div className="flex flex-col items-left -mt-20 gap-5 ">
                 <Link to={`/`} className="text-black  no-underline uppercase">Home</Link>
                 <Link to={`/About`} className="text-black  no-underline uppercase">About Us</Link>
                 <Link to={`/MakeAnAppointment`} className="text-black  no-underline uppercase">Make An Appointment</Link>
