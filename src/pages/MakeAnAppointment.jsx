@@ -26,6 +26,7 @@ const MakeAnAppointment = () => {
         return isWeekday(date);
     };
 
+
     const [formData, setFormData] = useState({
         // Initialize form fields here
         id: '',
@@ -159,6 +160,9 @@ const MakeAnAppointment = () => {
                 <div className="control">
                     <label htmlFor="contact-number">Contact Number</label>
                     <input type="text" id="contact-number" name="contactNumber" value={formData.contactNumber}
+                           pattern="[0-9]{10}"
+                           title="Please enter a 10-digit phone number"
+                           required
                            onChange={handleChange}/>
                 </div>
 
