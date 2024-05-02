@@ -4,12 +4,12 @@ import HomeBanner from '../components/HomeBanner';
 function About() {
     return (
         <div>
-            <HomeBanner/>
-            <section className='w-2/3 mx-auto'> 
+            <HomeBanner />
+            <section className='w-2/3 mx-auto'>
                 <div className="text-base m-5 text-justify">
-                    <p className="text-center mb-5 text-xl font-alex-brush">
-                        <b>About StyleSavvy</b>
-                    </p>
+                    <div className="capitalize font-alex-brush text-secondcolor text-center text-xl">
+                        <h1>About StyleSavvy</h1>
+                    </div>
                     <p>
                         Welcome to StyleSavvy, your premier destination for expert hair
                         care and nail services in the heart of the city. At StyleSavvy, we

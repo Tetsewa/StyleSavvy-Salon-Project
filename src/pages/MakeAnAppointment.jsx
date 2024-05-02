@@ -134,14 +134,14 @@ const MakeAnAppointment = () => {
             {/*<h1 className="text-3xl font-bold ">Make An Appointment</h1>*/}
 
             <form onSubmit={handleSubmit}>
-                <h2>Make an appointment!</h2>
+                <h1>Make an appointment!</h1>
                 <p>We just need a little bit of data from you to get you started 🚀</p>
 
                 <div className="control-row">
-                    <div className="control">
-                        <label htmlFor="first-name">First Name</label>
+                    <div className="control ">
+                        <label  htmlFor="first-name">First Name</label>
                         <input type="text" id="first-name" name="firstName" value={formData.firstName}
-                               onChange={handleChange}/>
+                               onChange={handleChange} style={{width: "370px"}}/>
                     </div>
 
                     <div className="control">

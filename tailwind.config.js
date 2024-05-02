@@ -29,9 +29,10 @@ module.exports = {
       },
     },
     fontSize: {
-      xl: "20px",
+      xl: "30px",
       mini: "15px",
       inherit: "inherit",
+      base:"20px",
       xxl: "100px",
     },
   },

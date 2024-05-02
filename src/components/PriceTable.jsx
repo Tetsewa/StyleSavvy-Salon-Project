@@ -46,7 +46,7 @@ const rows4 = [
 
 export default function PriceTable() {
     return (
-        <div className ="grid grid-cols-1 md:grid-cols-2">
+        <div className ="grid grid-cols-1 md:grid-cols-2 mx-[200px]">
             <div className ="max-w-2xl m-5" > 
             
             <TableContainer component={Paper} >
@@ -74,17 +74,19 @@ export default function PriceTable() {
         </TableContainer>
         </div>
 
-        <div className ="max-w-2xl m-5" >
+        
+
+            <div className ="max-w-2xl m-5">
             <TableContainer component={Paper}>
             <Table sx={{ maxWidth: 672 }} aria-label="simple table">
                 <TableHead>
                     <TableRow className='bg-fifthcolor'>
-                        <TableCell>Nail Services</TableCell>
+                        <TableCell>Skin Care Services</TableCell>
                         <TableCell align="left">Price</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows2.map((row) => (
+                    {rows3.map((row) => (
                         <TableRow
                             key={row.service}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -100,17 +102,17 @@ export default function PriceTable() {
         </TableContainer>
             </div>
 
-            <div className ="max-w-2xl m-5">
+            <div className ="max-w-2xl m-5" >
             <TableContainer component={Paper}>
             <Table sx={{ maxWidth: 672 }} aria-label="simple table">
                 <TableHead>
                     <TableRow className='bg-fifthcolor'>
-                        <TableCell>Skin Care Services</TableCell>
+                        <TableCell>Nail Services</TableCell>
                         <TableCell align="left">Price</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows3.map((row) => (
+                    {rows2.map((row) => (
                         <TableRow
                             key={row.service}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
