@@ -137,7 +137,7 @@ const MakeAnAppointment = () => {
                 <h2>Make an appointment!</h2>
                 <p>We just need a little bit of data from you to get you started 🚀</p>
 
-                <div className="control-row">
+                <div className="control-row ">
                     <div className="control">
                         <label htmlFor="first-name">First Name</label>
                         <input type="text" id="first-name" name="firstName" value={formData.firstName}

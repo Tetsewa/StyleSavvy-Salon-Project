@@ -6,12 +6,12 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-      <nav className="h-32">
+      <nav className="h-20">
         <div className="flex justify-between px-3 h-[100%]">
           <img
               alt="logo"
               src="/stylesavvy-logo-png-1@2x.png"
-              width={140} height={170}
+              width={110} height={110}
           />
 
           <div className="flex gap-10 justify-center items-center hidden md:flex">
