@@ -6,7 +6,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-      <nav className="h-28">
+      <nav className="h-32">
         <div className="flex justify-between px-3">
           <img
               alt="logo"
@@ -64,10 +64,7 @@ const Navbar = () => {
 
               </div>
 
-              {/* <div className="flex items-center justify-center font-semibold mt-5">
-                <button className=" bg-black text-white p-4 rounded"><Link to="/MyReservation" className="text-black text-black no-underline uppercase">MyReservation</Link> </button>
-              </div> */}
-
+             
             </div>
         )}
 
