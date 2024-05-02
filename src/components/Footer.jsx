@@ -42,7 +42,7 @@ export default function Footer() {
                         alt=""
                         src="/image-2@2x.png"
                     />
-                    <span>+312564855622</span>
+                    <span>+31654789323</span>
                 </div>
                 <div className="flex mb-3 items-center">
                     <img
