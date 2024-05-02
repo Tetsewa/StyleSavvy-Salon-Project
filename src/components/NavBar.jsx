@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
       <nav className="h-32">
-        <div className="flex justify-between px-3">
+        <div className="flex justify-between px-3 h-[100%]">
           <img
               alt="logo"
               src="/stylesavvy-logo-png-1@2x.png"
@@ -26,9 +26,9 @@ const Navbar = () => {
 
 
 
-          <button onClick={() => setMenuOpen((prev) => !prev)}>
+          <button className="bg-white flex justify-center items-center p-0" onClick={() => setMenuOpen((prev) => !prev)}>
             <svg
-                className="w-6 h-6 mr-2 block md:hidden"
+                className="w-6 h-6 mx-4 block md:hidden z-30"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -52,9 +52,9 @@ const Navbar = () => {
 
 
         {menuOpen && (
-            <div >
-              <div className="flex flex-col items-left -mt-20 gap-5 ">
-                <Link to={`/`} className="text-black  no-underline uppercase">Home</Link>
+            <div className="fixed w-full top-0 bg-white p-8">
+              <div className="bg-white flex flex-col items-left gap-5">
+                <Link to={`/`} className="text-black no-underline uppercase">Home</Link>
                 <Link to={`/About`} className="text-black  no-underline uppercase">About Us</Link>
                 <Link to={`/MakeAnAppointment`} className="text-black  no-underline uppercase">Make An Appointment</Link>
                 <Link to={`/Services`} className="text-black  no-underline uppercase">Services/Prices</Link>

@@ -266,7 +266,7 @@ const MakeAnAppointment = () => {
                 </div>
 
                 <p className="form-actions">
-                    <button type="reset" className="button button-flat">
+                    <button type="reset" className="button ">
                         Reset
                     </button>
                     <button type="submit" className="button">
