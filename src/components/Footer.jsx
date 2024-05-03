@@ -3,11 +3,12 @@ import { SocialIcon } from 'react-social-icons';
 
 export default function Footer() {
     return (
-        <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-fourthcolor p-6 md:p-10 lg:p-10">
-            <div className="p-6">
+        <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-fourthcolor p-6 md:p-8 lg:p-10">
+            <div className="p-3">
                 <h3 className="font-bold mb-3 ">Salon Opening Hours</h3>
                 <p className="mb-3 ">
                     Monday to Saturday: 9:00 AM - 5:00 PM <br/>
+                     <br/>
                     Sunday: Closed
                 </p>
                 <p className="text-sm">
@@ -41,7 +42,7 @@ export default function Footer() {
                         alt=""
                         src="/image-2@2x.png"
                     />
-                    <span>+31654789323</span>
+                    <span>+312564855622</span>
                 </div>
                 <div className="flex mb-3 items-center">
                     <img
