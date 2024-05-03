@@ -4,7 +4,9 @@ const Team = () => {
     return (
         <div className=" overflow-hidden text-left  text-black font-alex-brush">
             <HomeBanner/>
-            <h1 className="text-6xl bg-font-semibold mb-10 text-secondcolor text-center ">Meet Our Team</h1>
+            <div className="capitalize font-alex-brush text-secondcolor text-center text-xl">
+          <h1>Meet Our Team</h1>
+        </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:mx-[300px]">
                 <div className="bg-white flex flex-col items-center mb-4 w-80 h-150 pt-2 rounded-lg">
                     <img className="w h-62 object-cover mb-4" alt="" src="/team2.png"/>
