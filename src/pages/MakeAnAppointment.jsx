@@ -9,7 +9,8 @@ import {v4 as uuidv4} from 'uuid';
 
 const MakeAnAppointment = () => {
     const [startDate, setStartDate] = useState(new Date());
-    const [startTime, setStartTime] = useState(new Date());
+    //const [startTime, setStartTime] = useState(new Date());
+    const [startTime, setStartTime] = useState(null);
     const navigate = useNavigate();
 
     const [selectedOptionHairServices, setSelectedOptionHairServices] = useState('');
@@ -65,7 +66,7 @@ const MakeAnAppointment = () => {
         console.log(formData);
         formData.id = uuidv4();
         formData.dateScheduled = startDate;
-        formData.timeScheduled = startTime;
+
         if (selectedOptionHairServices !== null && selectedOptionHairServices !== '') {
             formData.services.push(selectedOptionHairServices);
         }
@@ -78,6 +79,10 @@ const MakeAnAppointment = () => {
         if (selectedOptionSpaServices != null && selectedOptionSpaServices !== '') {
             formData.services.push(selectedOptionSpaServices);
         }
+
+        const adjustedStartTime = new Date(startTime.getTime());
+        adjustedStartTime.setUTCHours(adjustedStartTime.getUTCHours() + 2);
+        formData.timeScheduled =  adjustedStartTime.toISOString();
         e.preventDefault();
         try {
             const response = await axios.post('https://stylesavvy.adaptable.app/reservations', formData);
@@ -251,7 +256,7 @@ const MakeAnAppointment = () => {
                                     showTimeSelectOnly
                                     timeIntervals={30}
                                     timeCaption="Time"
-                                    dateFormat="h:mm"
+                                    dateFormat="h:mm aa"
                                     minTime={new Date(0, 0, 0, 9, 0)}
                                     maxTime={new Date(0, 0, 0, 17, 0)}/>
                     </div>
