@@ -2,11 +2,9 @@
 ![Logo](https://github.com/Tetsewa/StyleSavvy-Salon-Project/blob/main/public/stylesavvy-logo-png-1%402x.png)
 # Style-Savvy
 
-Style-Savvy is an applciaiton to book reservations for expert hair care, Spa, Skin and nail services in the heart of the city. 
-
-Using this application we can reserve an hairstylist on a specific date and time. You also have an option to view and modify the scheduled appointment before confirming the booking.
-
-For now, this is a single user application, eventually this application is made use to handle multiple user authentications.
+Style-Savvy is a versatile application designed for booking appointments for a range of expert beauty services, including hair care, spa treatments, skincare, and nail services, conveniently located in the city center. 
+Users can easily reserve a hairstylist for a chosen date and time, with the flexibility to view and adjust appointments before finalizing bookings. 
+Although currently tailored for single-user access, future updates will expand its functionality to accommodate multiple user authentications, enhancing its usability and accessibility.
 
 
 ## Tech Stack
@@ -123,12 +121,12 @@ This project is developed as a part of IronHack project work
 
 - [@Ama Tetsewa](https://github.com/Tetsewa)
 
-## Demo
+## Demo link
 
-Insert gif or link to demo
+[StyleSavvy](https://stylesavvyproject.netlify.app/)
 
 
 ## Support
 
-For support, email sowjanyaakella87@gmail.com or amatwilliams@gmail.com.
+For support and suggestions, email sowjanyaakella87@gmail.com or amatwilliams@gmail.com.
 
