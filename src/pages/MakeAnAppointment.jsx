@@ -28,7 +28,7 @@ const MakeAnAppointment = () => {
 
 
     const [formData, setFormData] = useState({
-        // Initialize form fields here
+        
         id: '',
         firstName: '',
         lastName: '',
@@ -97,10 +97,10 @@ const MakeAnAppointment = () => {
     const [dataMap, setDataMap] = useState(new Map());
 
     useEffect(() => {
-        // Simulate fetching JSON data (replace with actual fetch call)
+        // fetching JSON data 
         const fetchData = async () => {
             try {
-                const response = await fetch('https://json-api.adaptable.app/services'); // Replace 'example.json' with your JSON file or API endpoint
+                const response = await fetch('https://json-api.adaptable.app/services'); 
                 const jsonData = await response.json();
 
                 // Convert JSON object to Map
@@ -112,7 +112,7 @@ const MakeAnAppointment = () => {
         };
 
         fetchData();
-    }, []); // Empty dependency array to ensure useEffect runs only once
+    }, []); 
 
     // Function to convert JSON object to Map with "id" field as keys
     const jsonToMap = (json) => {
@@ -131,17 +131,16 @@ const MakeAnAppointment = () => {
     return (<div>
             <HomeBanner/>
 
-            {/*<h1 className="text-3xl font-bold ">Make An Appointment</h1>*/}
 
             <form onSubmit={handleSubmit}>
-                <h2>Make an appointment!</h2>
+                <h1>Make an appointment!</h1>
                 <p>We just need a little bit of data from you to get you started 🚀</p>
 
-                <div className="control-row ">
-                    <div className="control">
-                        <label htmlFor="first-name">First Name</label>
+                <div className="control-row">
+                    <div className="control ">
+                        <label  htmlFor="first-name">First Name</label>
                         <input type="text" id="first-name" name="firstName" value={formData.firstName}
-                               onChange={handleChange}/>
+                               onChange={handleChange} style={{width: "370px"}}/>
                     </div>
 
                     <div className="control">
@@ -252,7 +251,7 @@ const MakeAnAppointment = () => {
                                     showTimeSelectOnly
                                     timeIntervals={30}
                                     timeCaption="Time"
-                                    dateFormat="h:mm aa"
+                                    dateFormat="h:mm"
                                     minTime={new Date(0, 0, 0, 9, 0)}
                                     maxTime={new Date(0, 0, 0, 17, 0)}/>
                     </div>
@@ -266,7 +265,7 @@ const MakeAnAppointment = () => {
                 </div>
 
                 <p className="form-actions">
-                    <button type="reset" className="button ">
+                    <button type="reset" className="button button-flat">
                         Reset
                     </button>
                     <button type="submit" className="button">
