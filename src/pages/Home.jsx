@@ -3,15 +3,15 @@ import HomeBanner from '../components/HomeBanner';
 
 const Home = () => {
   return (
-      <div className="w-fullbg-white  overflow-hidden text-left text-mini text-black font-fira-sans">
+      <div className="w-full  overflow-hidden text-left text-mini text-black font-fira-sans">
         <HomeBanner />
-        <div className="capitalize font-alex-brush text-secondcolor text-center">
+        <div className="capitalize font-alex-brush text-secondcolor text-center text-xl">
           <h1>What Customers Say About Us</h1>
         </div>
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8 mt-8  p-8">
-          <div className="bg-white rounded-lg p-6 shadow-md">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:mx-[200px] gap-8 mt-8 p-8">
+          <div className="bg-white rounded-lg p-6 shadow-md w-[350px]">
             <img
                 className="w-full h-48 object-cover rounded-lg mb-4"
                 alt=""
@@ -29,7 +29,7 @@ const Home = () => {
           </div>
 
 
-          <div className="bg-white rounded-lg p-6 shadow-md">
+          <div className="bg-white rounded-lg p-6 shadow-md w-[350px]">
             <img
                 className="w-full h-48 object-cover rounded-lg mb-4"
                 alt=""
@@ -47,7 +47,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-lg p-6 shadow-md">
+          <div className="bg-white rounded-lg p-6 shadow-md w-[350px]">
             <img
                 className="w-full h-48 object-cover rounded-lg mb-4"
                 alt=""
@@ -64,7 +64,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-lg p-6 shadow-md">
+          <div className="bg-white rounded-lg p-6 shadow-md w-[350px]">
             <img
                 className="w-full h-48 object-cover rounded-lg mb-4"
                 alt=""
@@ -81,7 +81,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-lg p-6 shadow-md">
+          <div className="bg-white rounded-lg p-6 shadow-md w-[350px]">
             <img
                 className="w-full h-48 object-cover rounded-lg mb-4"
                 alt=""
@@ -91,7 +91,20 @@ const Home = () => {
               The final result was beyond my expectations! Lily's hair looked
               absolutely adorable, and she couldn't stop smiling when she saw
               herself in the mirror. Sarah even gave her some cute hair accessories
-              as a special treat, which made Lily feel like a princess. I highly recommended .
+              as a special treat, which made Lily feel like a princess. I highly recommended.
+            </p>
+            <p className="text-xs">
+              Rating: ⭐⭐⭐⭐⭐
+            </p>
+          </div>
+          <div className="bg-white rounded-lg p-6 shadow-md w-[350px]">
+          <img
+                className="w-full h-48 object-cover rounded-lg mb-4"
+                alt=""
+                src="/spaservices.png"
+            />
+            <p className="text-sm mb-4">
+            Katie provided exceptional service during my recent spa treatment, displaying professionalism, expertise, and a genuine commitment to my comfort. Their personalized approach and attention to detail created a relaxing and memorable experience, leaving me feeling refreshed and valued as a customer.
             </p>
             <p className="text-xs">
               Rating: ⭐⭐⭐⭐⭐
